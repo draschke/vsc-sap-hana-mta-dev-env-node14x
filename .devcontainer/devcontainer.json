@@ -1,0 +1,94 @@
+// For format details, see https://aka.ms/vscode-remote/devcontainer.json or this file's README at:
+// https://github.com/microsoft/vscode-dev-containers/tree/v0.101.0/containers/typescript-node-12
+{
+  "name": "SAP HANA application development for XSA & CF",
+  "dockerFile": "Dockerfile",
+
+  // Set *default* container specific settings.json values on container create.
+  "settings": {
+    "workbench.colorTheme": "codeSTACKr Theme"
+  },
+
+  // Add the IDs of extensions you want installed when the container is created.
+  "extensions": [
+    "alexcvzz.vscode-sqlite",
+    "bengreenier.vscode-node-readme",
+    "christian-kohler.path-intellisense",
+    "codestackr.codestackr-theme",
+    "coenraads.bracket-pair-colorizer-2",
+    "cschleiden.vscode-github-actions",
+    "dbaeumer.vscode-eslint",
+    "donjayamanne.githistory",
+    "dotjoshjohnson.xml",
+    "eamodio.gitlens",
+    "esbenp.prettier-vscode",
+    "fivepointseven.node-version",
+    "github.copilot",
+    "github.vscode-pull-request-github",
+    "grapecity.gc-excelviewer",
+    "gruntfuggly.todo-tree",
+    "hbenl.vscode-test-explorer",
+    "hookyqr.beautify",
+    "humao.rest-client",
+    // "ipedrazas.kubernetes-snippets",
+    "jakebathman.mysql-syntax",
+    "jhodel.blue-phoenix",
+    "jvalecillos.gpg",
+    "kenhowardpdx.vscode-gist",
+    "leizongmin.node-module-intellisense",
+    "mccarter.start-git-bash",
+    "mechatroner.rainbow-csv",
+    "mhutchie.git-graph",
+    "mindaro-dev.file-downloader",
+    "mindaro.mindaro",
+    "ms-azuretools.vscode-docker",
+    "ms-ceintl.vscode-language-pack-de",
+    // "ms-kubernetes-tools.vscode-kubernetes-tools",
+    "ms-mssql.mssql",
+    "ms-python.python",
+    "ms-python.vscode-pylance",
+    "ms-toolsai.jupyter",
+    "ms-vscode-remote.remote-containers",
+    "ms-vscode-remote.remote-ssh-edit",
+    "ms-vscode-remote.remote-ssh",
+    "ms-vscode-remote.remote-wsl",
+    "ms-vscode-remote.vscode-remote-extensionpack",
+    "ms-vscode.cpptools",
+    "ms-vscode.js-debug-nightly",
+    "ms-vscode.test-adapter-converter",
+    "msjsdiag.debugger-for-chrome",
+    "mtxr.sqltools-driver-sqlite",
+    "mtxr.sqltools",
+    "pflannery.vscode-versionlens",
+    "redhat.vscode-commons",
+    "redhat.vscode-yaml",
+    "sapos.yeoman-ui",
+    "saposs.sap-hana-driver-for-sqltools",
+    "saposs.xml-toolkit",
+    "sapse.sap-ux-annotation-modeler-extension",
+    "sapse.sap-ux-application-modeler-extension",
+    "sapse.sap-ux-fiori-tools-extension-pack",
+    "sapse.sap-ux-help-extension",
+    "sapse.sap-ux-service-modeler-extension",
+    "sapse.vsc-extension-sa",
+    "sapse.vscode-cds",
+    "sdras.night-owl",
+    "solarliner.linux-themes",
+    "theosun.sap-json-schemas",
+    "thomascsd.vscode-readme-pattern",
+    "visualstudioexptteam.vscodeintellicode",
+    "vscode-icons-team.vscode-icons",
+    "waderyan.gitblame",
+    "yzhang.markdown-all-in-one"
+  ],
+
+  // Use 'forwardPorts' to make a list of ports inside the container available locally.
+  // "forwardPorts": [3000, 4004],
+
+  // Use 'postCreateCommand' to run commands after the container is created.
+//   "postCreateCommand": "npm install"
+  // "postCreateCommand": "yarn install",
+
+  // Uncomment to connect as a non-root user. See https://aka.ms/vscode-remote/containers/non-root.
+  "remoteUser": "node"
+}
