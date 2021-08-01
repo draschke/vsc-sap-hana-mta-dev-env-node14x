@@ -1,4 +1,4 @@
-# Kick off your SAP HANA App Development for XSA & CF by leverage VS Code Dev Container
+# Kick off your SAP HANA App Dev Env for running Hana-Cli (XS & CF) by leverage VS Code Dev Container
 
 ## Prerequisites
 - [Install this VS Code extensions at first](https://code.visualstudio.com/docs/remote/containers-tutorial#_install-the-extension)
@@ -42,3 +42,5 @@
 ## Nice blog written by @htammen
 - [Develop SAP CAP apps inside a VS Code Docker Container](https://blogs.sap.com/2020/02/20/develop-sap-cap-apps-inside-a-vs-code-docker-container/)
 
+## HANA CLI by @jung-thomas
+- [SAP HANA Developer Command Line Interface](https://github.com/SAP-samples/hana-developer-cli-tool-example)

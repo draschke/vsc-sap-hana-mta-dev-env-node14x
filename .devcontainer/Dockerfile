@@ -14,7 +14,7 @@ FROM mcr.microsoft.com/vscode/devcontainers/javascript-node:14
 ARG USERNAME=node
 ARG USER_UID=1000
 ARG USER_GID=$USER_UID
-ENV XSCLI="/workspaces/vscode-sap-hana-cli/XS_CLIENT00P_134-70001320"
+ENV XSCLI="/workspaces/vscode-sap-hana-dev-env-for-running-hana-cli/XS_CLIENT00P_134-70001320"
 ENV PATH=$PATH:${XSCLI}/bin
 ENV npm config set registry https://registry.npmjs.org/
 
