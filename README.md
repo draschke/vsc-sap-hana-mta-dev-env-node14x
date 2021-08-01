@@ -37,3 +37,6 @@
 
 ## MS Tutorial: VS Code Dev Container
 [Remote development in Containers](https://code.visualstudio.com/docs/remote/containers-tutorial)
+
+## Or read this great blog by @htammen
+[Develop SAP CAP apps inside a VS Code Docker Container](https://blogs.sap.com/2020/02/20/develop-sap-cap-apps-inside-a-vs-code-docker-container/)
