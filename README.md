@@ -16,9 +16,9 @@
 ### OS
   - OS Debian
 ### CLIs
-  - XS_Client
-  - CF Cloud Foundry 
-  - HANA Cli 
+  - XS Client (XSA)
+  - CF Client (Cloud Foundry)
+  - HANA Client  
 
 ### VS Code Extensions
   - A lot of nice extensions
@@ -37,6 +37,8 @@
 
 ## MS Tutorial: VS Code Dev Container
 [Remote development in Containers](https://code.visualstudio.com/docs/remote/containers-tutorial)
+[Developing inside Container](https://code.visualstudio.com/docs/remote/containers)
 
 ## Or read this great blog by @htammen
 [Develop SAP CAP apps inside a VS Code Docker Container](https://blogs.sap.com/2020/02/20/develop-sap-cap-apps-inside-a-vs-code-docker-container/)
+
