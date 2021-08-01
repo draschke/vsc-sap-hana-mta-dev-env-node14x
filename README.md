@@ -39,6 +39,6 @@
 - [Remote development in Containers](https://code.visualstudio.com/docs/remote/containers-tutorial)
 - [Developing inside Container](https://code.visualstudio.com/docs/remote/containers)
 
-## By @htammen - Read this great blog 
+## Nice blog written by @htammen
 - [Develop SAP CAP apps inside a VS Code Docker Container](https://blogs.sap.com/2020/02/20/develop-sap-cap-apps-inside-a-vs-code-docker-container/)
 
