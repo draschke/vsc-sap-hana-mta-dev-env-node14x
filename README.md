@@ -18,7 +18,7 @@
 ### CLIs
   - XS Client (XSA)
   - CF Client (Cloud Foundry)
-  - HANA Client  
+  - HANA Client
 
 ### VS Code Extensions
   - A lot of nice extensions
@@ -31,7 +31,6 @@
   - @sap/generator-fiori
   - @sap/generator-hdb-project
   - @sapui5/generator-sapui5-templates
-  - hana-cli
   - typescript 
 
 
