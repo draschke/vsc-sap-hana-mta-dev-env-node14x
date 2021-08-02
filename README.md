@@ -40,7 +40,7 @@
 - [Remote development in Containers](https://code.visualstudio.com/docs/remote/containers-tutorial)
 - [Developing inside Container](https://code.visualstudio.com/docs/remote/containers)
 
-### Nice blog about "SAP CAP VS Code dev container" written by @htammen
+### Nice blog "SAP CAP VS Code dev container" written by @htammen
 - [Develop SAP CAP apps inside a VS Code Docker Container](https://blogs.sap.com/2020/02/20/develop-sap-cap-apps-inside-a-vs-code-docker-container/)
 
 ### HANA CLI by @jung-thomas
@@ -50,3 +50,7 @@
 ## Contributing
 
 ### You are welcome to contribute code in order to fix bugs or to implement new features!
+
+## License
+
+Copyright (c) 2021 Dirk Raschke. All rights reserved. This project is licensed under the MIT License.
