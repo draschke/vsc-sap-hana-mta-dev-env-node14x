@@ -1,4 +1,4 @@
-## Kick off your SAP HANA App Dev Env for running Hana-Cli (XS & CF) by leverage VS Code Dev Container. Use this Dev Container (.devcontainer) for your projects if you want.
+## Kick off your SAP HANA App Dev Env for running Hana-Cli (XS & CF) by leverage VS Code Dev Container. Use this [.devcontainer](https://github.com/SAP-samples/hana-developer-cli-tool-example/.devcontainer) for your projects if you want.
 <br/><br/>
 
 ## Prerequisites
