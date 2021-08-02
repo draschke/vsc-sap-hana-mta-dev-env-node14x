@@ -1,5 +1,9 @@
 # Kick off your SAP HANA App Dev Env for running Hana-Cli (XS & CF) by leverage VS Code Dev Container
 
+## Use this .devcontainer for your projects if you want.
+
+
+
 ## Prerequisites
 - [Install this VS Code extensions at first](https://code.visualstudio.com/docs/remote/containers-tutorial#_install-the-extension)
 
@@ -34,18 +38,18 @@
   - typescript 
 
 
-### Tutorials
-## Microsoft - VS Code Dev Container
+## Tutorials
+### Microsoft - VS Code Dev Container
 - [Remote development in Containers](https://code.visualstudio.com/docs/remote/containers-tutorial)
 - [Developing inside Container](https://code.visualstudio.com/docs/remote/containers)
 
-## Nice blog written by @htammen
+### Nice blog written by @htammen
 - [Develop SAP CAP apps inside a VS Code Docker Container](https://blogs.sap.com/2020/02/20/develop-sap-cap-apps-inside-a-vs-code-docker-container/)
 
-## HANA CLI by @jung-thomas
+### HANA CLI by @jung-thomas
 - [SAP HANA Developer Command Line Interface](https://github.com/SAP-samples/hana-developer-cli-tool-example)
 
 
-# Contributing
+## Contributing
 
 ### You are welcome to contribute code in order to fix bugs or to implement new features.
