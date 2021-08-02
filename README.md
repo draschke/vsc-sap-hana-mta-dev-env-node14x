@@ -49,7 +49,7 @@
 
 ## Contributing
 
-### You are welcome to contribute code in order to fix bugs or to implement new features!
+You are welcome to contribute code in order to fix bugs or to implement new features!
 
 ## License
 
