@@ -59,6 +59,7 @@
     "msjsdiag.debugger-for-chrome",
     "mtxr.sqltools-driver-sqlite",
     "mtxr.sqltools",
+    "mutantdino.resourcemonitor",
     "pflannery.vscode-versionlens",
     "redhat.vscode-commons",
     "redhat.vscode-yaml",
