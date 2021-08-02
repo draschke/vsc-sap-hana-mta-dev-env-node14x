@@ -24,14 +24,14 @@
 ### VS Code Extensions
   - A lot of nice extensions
   
-### NPMs for CAP Dev
+### NPMs for CAP & Fiori Dev
   - [@sap/cds-dk yo](https://www.npmjs.com/package/@sap/cds-dk)
-  - @sap/generator-add-hdb-module
-  - @sap/generator-base-mta-module
-  - @sap/generator-cap-project
   - [@sap/generator-fiori](https://www.npmjs.com/package/@sap/generator-fiori)
-  - @sap/generator-hdb-project
-  - [@sapui5/generator-sapui5-templates](https://www.npmjs.com/package/@sapui5/generator-sapui5-templates)
+    - @sap/generator-add-hdb-module
+    - @sap/generator-base-mta-module
+    - @sap/generator-cap-project
+    - @sap/generator-hdb-project
+    - [@sapui5/generator-sapui5-templates](https://www.npmjs.com/package/@sapui5/generator-sapui5-templates)
   - typescript 
 <br/><br/>
 
