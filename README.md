@@ -16,21 +16,21 @@
 ### OS
   - OS Debian
 ### CLIs
-  - XS Client (XSA)
-  - CF Client (Cloud Foundry)
-  - HANA Client
+  - [XS Client (XSA)](https://launchpad.support.sap.com/#/softwarecenter/template/products/related/_APP=00200682500000001943&_EVENT=DISPHIER&HEADER=Y&FUNCTIONBAR=N&EVENT=TREE&NE=NAVIGATE&ENR=73554900100900001301&V=MAINT/SAP%20HANA%20PLATFORM%20EDITION%202.0)
+  - [CF Client (Cloud Foundry)](https://docs.cloudfoundry.org/cf-cli/install-go-cli.html#pkg-linux)
+  - [HANA Client](https://www.npmjs.com/package/hana-cli)
 
 ### VS Code Extensions
   - A lot of nice extensions
   
 ### NPMs for CAP Dev
-  - @sap/cds-dk yo
+  - [@sap/cds-dk yo](https://www.npmjs.com/package/@sap/cds-dk)
   - @sap/generator-add-hdb-module
   - @sap/generator-base-mta-module
   - @sap/generator-cap-project
-  - @sap/generator-fiori
+  - [@sap/generator-fiori](https://www.npmjs.com/package/@sap/generator-fiori)
   - @sap/generator-hdb-project
-  - @sapui5/generator-sapui5-templates
+  - [@sapui5/generator-sapui5-templates](https://www.npmjs.com/package/@sapui5/generator-sapui5-templates)
   - typescript 
 
 
@@ -44,3 +44,8 @@
 
 ## HANA CLI by @jung-thomas
 - [SAP HANA Developer Command Line Interface](https://github.com/SAP-samples/hana-developer-cli-tool-example)
+
+
+# Contributing
+
+### You are welcome to contribute code in order to fix bugs or to implement new features.
