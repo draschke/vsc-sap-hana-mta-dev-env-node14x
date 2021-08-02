@@ -4,7 +4,7 @@
 ## Prerequisites
 - [Install this VS Code extensions at first](https://code.visualstudio.com/docs/remote/containers-tutorial#_install-the-extension)
 
-#### XS Client for SAP HANA XSA
+#### XS Client for SAP HANA XSA (Only required for connecting a XSA platform)
 - [Download the XS_CLIENT00P_xxx-70001320 for Linux from SAP Download Center](https://launchpad.support.sap.com/#/softwarecenter/template/products/related/_APP=00200682500000001943&_EVENT=DISPHIER&HEADER=Y&FUNCTIONBAR=N&EVENT=TREE&NE=NAVIGATE&ENR=73554900100900001301&V=MAINT/SAP%20HANA%20PLATFORM%20EDITION%202.0)
 - Drop the unzipped file on root
 ![XS_Client](https://github.com/draschke/vscode-sap-hana-dev-environment-for-cf-and-xs/blob/main/images/xs-client.png)
@@ -49,4 +49,4 @@
 
 ## Contributing
 
-### You are welcome to contribute code in order to fix bugs or to implement new features.
+### You are welcome to contribute code in order to fix bugs or to implement new features!
