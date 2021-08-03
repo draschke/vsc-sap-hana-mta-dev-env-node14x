@@ -10,6 +10,12 @@
     - ![XS_Client](https://github.com/draschke/vscode-sap-hana-dev-environment-for-cf-and-xs/blob/main/images/xs-client.png)
   - Change the path in your .devcontainer\Dockerfile
     - (ENV XSCLI="/workspaces/cap-vscode-dev-container/XS_CLIENT00P_134-70001320)
+  - Change the permission by running your WSL - Distro with the chmod command.
+      - XS_CLIENT00P_134-70001320/bin
+        - chmod -R +x xs
+      - XS_CLIENT00P_134-70001320/sapjvm_8_jre/
+        - chmod -R +x bin 
+      - [look at this issue if you need help](https://github.com/draschke/vscode-sap-hana-dev-env-for-running-hana-cli/issues/1#issuecomment-891732622)
   <br/><br/>
 
 
