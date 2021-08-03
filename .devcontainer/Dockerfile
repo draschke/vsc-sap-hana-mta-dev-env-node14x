@@ -50,8 +50,8 @@ RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
     && apt-get -y install --no-install-recommends sqlite cf-cli
 
 # ps needs to be available to be able to be used in docker.inside, see https://issues.jenkins-ci.org/browse/JENKINS-40101
-RUN apt-get update && \
-    apt-get install --yes --no-install-recommends procps unzip && \
-    rm -rf /var/lib/apt/lists/* && \
-    mkdir --parents ${XSCLI} && \
-    chown --recursive ${USERNAME}:${USERNAME} ${XSCLI}
+RUN apt-get update \
+   && apt-get install --yes --no-install-recommends procps unzip \
+   && rm -rf /var/lib/apt/lists/* \
+   && mkdir --parents ${XSCLI} \
+   && chown --recursive ${USERNAME}:${USERNAME} ${XSCLI}
