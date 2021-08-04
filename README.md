@@ -20,7 +20,7 @@
 
 ## Hint for running project in WSL (Ubuntu)
 - For performance reason run the project in the Linux file system (~/home)
-  - There you'll find it on Windows:
+  - You'll find your Linux home directory on Windows here:
     ``` 
     \\wsl$
     \\wsl$\Ubuntu-20.04\home\
