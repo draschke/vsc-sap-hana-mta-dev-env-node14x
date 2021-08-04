@@ -2,7 +2,9 @@
 <br/><br/>
 
 ## Prerequisites
+=============
 - [Install this VS Code Containers extension at first](https://code.visualstudio.com/docs/remote/containers-tutorial#_install-the-extension)
+
 
 - XS Client for SAP HANA XSA (Only required for connecting a XSA platform)
   - [Download the XS_CLIENT00P_xxx-70001320 for Linux from SAP Download Center](https://launchpad.support.sap.com/#/softwarecenter/template/products/related/_APP=00200682500000001943&_EVENT=DISPHIER&HEADER=Y&FUNCTIONBAR=N&EVENT=TREE&NE=NAVIGATE&ENR=73554900100900001301&V=MAINT/SAP%20HANA%20PLATFORM%20EDITION%202.0)
@@ -16,10 +18,17 @@
       - XS_CLIENT00P_134-70001320/sapjvm_8_jre/
         - chmod -R +x bin 
       - [look at this issue if you need help](https://github.com/draschke/vscode-sap-hana-dev-env-for-running-hana-cli/issues/1#issuecomment-891732622)
+
+## Hint for running project in WSL (Ubuntu)
+=======================================
+- For performance reason run the project in the Linux file system (~/home)
+  - Find it on Windows!
+    - \\wsl$
+    - \\wsl$\Ubuntu-20.04\home\
   <br/><br/>
 
-
 ## This VS Dev Container includes:
+===============================
 ### OS
   - OS Debian
 ### CLIs
@@ -42,6 +51,7 @@
 <br/><br/>
 
 ## Tutorials
+=========
 ### Microsoft - VS Code Dev Container
 - [Remote development in Containers](https://code.visualstudio.com/docs/remote/containers-tutorial)
 - [Developing inside Container](https://code.visualstudio.com/docs/remote/containers)
@@ -54,9 +64,9 @@
 <br/><br/>
 
 ## Contributing
-
-You are welcome to contribute code in order to fix bugs or to implement new features!
+============
+- You are welcome to contribute code in order to fix bugs or to implement new features!
 
 ## License
-
-Copyright (c) 2021 Dirk Raschke. All rights reserved. This project is licensed under the MIT License.
+=======
+- Copyright (c) 2021 Dirk Raschke. All rights reserved. This project is licensed under the MIT License.
