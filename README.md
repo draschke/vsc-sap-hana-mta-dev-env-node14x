@@ -2,7 +2,6 @@
 <br/><br/>
 
 ## Prerequisites
-=============
 - [Install this VS Code Containers extension at first](https://code.visualstudio.com/docs/remote/containers-tutorial#_install-the-extension)
 
 
@@ -20,7 +19,6 @@
       - [look at this issue if you need help](https://github.com/draschke/vscode-sap-hana-dev-env-for-running-hana-cli/issues/1#issuecomment-891732622)
 
 ## Hint for running project in WSL (Ubuntu)
-=======================================
 - For performance reason run the project in the Linux file system (~/home)
   - Find it on Windows!
     - \\wsl$
@@ -28,7 +26,6 @@
   <br/><br/>
 
 ## This VS Dev Container includes:
-===============================
 ### OS
   - OS Debian
 ### CLIs
@@ -51,7 +48,6 @@
 <br/><br/>
 
 ## Tutorials
-=========
 ### Microsoft - VS Code Dev Container
 - [Remote development in Containers](https://code.visualstudio.com/docs/remote/containers-tutorial)
 - [Developing inside Container](https://code.visualstudio.com/docs/remote/containers)
@@ -64,9 +60,7 @@
 <br/><br/>
 
 ## Contributing
-============
-- You are welcome to contribute code in order to fix bugs or to implement new features!
+You are welcome to contribute code in order to fix bugs or to implement new features!
 
 ## License
-=======
-- Copyright (c) 2021 Dirk Raschke. All rights reserved. This project is licensed under the MIT License.
+Copyright (c) 2021 Dirk Raschke. All rights reserved. This project is licensed under the MIT License.
