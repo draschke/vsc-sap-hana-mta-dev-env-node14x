@@ -20,9 +20,13 @@
 
 ## Hint for running project in WSL (Ubuntu)
 - For performance reason run the project in the Linux file system (~/home)
-  - Find it on Windows!
-    - \\wsl$
-    - \\wsl$\Ubuntu-20.04\home\
+  - There you'll find it on Windows:
+    ``` 
+    \\wsl$
+    \\wsl$\Ubuntu-20.04\home\
+    ```
+   
+
   <br/><br/>
 
 ## This VS Dev Container includes:
