@@ -2,6 +2,8 @@
 <br/><br/>
 
 ## Prerequisites
+- [Install Docker Desktop on Windows](https://docs.docker.com/docker-for-windows/install/)
+
 - [Install this VS Code Containers extension at first](https://code.visualstudio.com/docs/remote/containers-tutorial#_install-the-extension)
 
 
