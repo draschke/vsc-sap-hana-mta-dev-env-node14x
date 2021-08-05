@@ -20,14 +20,19 @@
         - chmod -R +x bin 
       - [look at this issue if you need help](https://github.com/draschke/vscode-sap-hana-dev-env-for-running-hana-cli/issues/1#issuecomment-891732622)
 
-## Hint for running project in WSL (Ubuntu)
+## Hints
+### Running project in WSL (Ubuntu)
 - For performance reason run the project in the Linux file system (~/home)
   - You'll find your Linux home directory on Windows here:
     ``` 
     \\wsl$
     \\wsl$\Ubuntu-20.04\home\
     ```
-   
+
+#### Use forwardPorts and postCreateCommand (.devcontainer/devcontainer.json)
+- "forwardPorts": [3000]
+- "postCreateCommand": "npm install
+     
 
   <br/><br/>
 

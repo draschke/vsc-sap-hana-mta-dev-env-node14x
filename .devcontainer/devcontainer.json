@@ -1,7 +1,7 @@
 // For format details, see https://aka.ms/vscode-remote/devcontainer.json or this file's README at:
 // https://github.com/microsoft/vscode-dev-containers/tree/v0.101.0/containers/typescript-node-12
 {
-  "name": "SAP HANA App development for XSA & CF",
+  "name": "SAP HANA App development for XSA & CF for Node.js 14.x",
   "dockerFile": "Dockerfile",
 
   // Set *default* container specific settings.json values on container create.
@@ -91,7 +91,10 @@
   // "forwardPorts": [3000, 4004],
 
   // Use 'postCreateCommand' to run commands after the container is created.
-//   "postCreateCommand": "npm install"
+  // "postCreateCommand": "npm install && npm audit fix && npm install --prefix /workspaces/yourAppName/db && --prefix /workspaces/yourAppName/js && npm install --prefix /workspaces/yourAppName/web",
+  // "postCreateCommand": "npm install && npm audit fix && npm install --prefix /workspaces/yourAppName/db && --prefix /workspaces/yourAppName/js && npm install --prefix /workspaces/yourAppName/web",
+  // "postCreateCommand": "npm install && npm audit fix && npm install --prefix /workspaces/yourAppName/db && npm install --prefix /workspaces/yourAppName/js && npm start --prefix /workspaces/yourAppName/js && npm audit fix --prefix /workspaces/yourAppName/js && npm install --prefix /workspaces/yourAppName/web &&  npm start --prefix /workspaces/yourAppName/db",
+
   // "postCreateCommand": "yarn install",
 
   // Uncomment to connect as a non-root user. See https://aka.ms/vscode-remote/containers/non-root.
