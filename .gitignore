@@ -4,7 +4,7 @@ XS_CLIENT00P_134-70001320
 
 myMTAapp
 com.myorg.myUI5App
-
+myMTA-Project
 # node
 # ====
 https://github.com/github/gitignore/blob/master/Node.gitignore
@@ -127,3 +127,4 @@ dist
 .yarn/install-state.gz
 .pnp.*
 issues
+install.txt

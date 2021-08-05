@@ -30,7 +30,8 @@ RUN if [ "$USER_GID" != "1000" ] || [ "$USER_UID" != "1000" ]; then \
     # && sudo -u ${USERNAME} npm set @sap:registry=https://npm.sap.com -g\
     # Install global node modules for SAP CAP and frontend development.
     && npm config set registry https://registry.npmjs.org/ \
-    && sudo -u ${USERNAME} npm i @sap/cds-dk \
+    && sudo -u ${USERNAME} nvm i --lts --latest-npm \
+    && npm i @sap/cds-dk \
     -g mta \
     -g yo \
     -g @sap/generator-base-mta-module \
