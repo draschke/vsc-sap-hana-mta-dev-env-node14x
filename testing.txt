@@ -1,0 +1,11 @@
+yo base-mta-module --mtaFilePath=/workspaces/vscode-sap-hana-dev-env-for-running-hana-cli/mta.yaml --defaultName=ui5
+yo @sap/base-mta-module --mtaFilePath=/workspaces/vscode-sap-hana-dev-env-for-running-hana-cli/mta1.yaml --defaultName=ui5
+
+npm install -g mta
+
+$ yo
+May we anonymously report usage statistics to improve the tool over time? 
+-->  No 
+Easy Ui5 
+  generator-ui5-project
+   What do you want to do? Create a new OpenUI5/SAPUI5 project

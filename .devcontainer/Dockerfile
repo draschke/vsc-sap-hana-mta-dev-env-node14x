@@ -30,11 +30,14 @@ RUN if [ "$USER_GID" != "1000" ] || [ "$USER_UID" != "1000" ]; then \
     # && sudo -u ${USERNAME} npm set @sap:registry=https://npm.sap.com -g\
     # Install global node modules for SAP CAP and frontend development.
     && npm config set registry https://registry.npmjs.org/ \
-    && sudo -u ${USERNAME} npm install -g @ui5/cli \
-     @sap/cds-dk yo \
+    && sudo -u ${USERNAME} npm i @sap/cds-dk \
+    -g mta \
+    -g yo \
+    -g @sap/generator-base-mta-module \
+    -g @sap/generator-fiori \    
+     -g yo generator-easy-ui5 \
      @sapui5/generator-sapui5-templates \
      @sap/generator-add-hdb-module \
-     @sap/generator-base-mta-module \
      @sap/generator-cap-project \
      @sap/generator-fiori \
      @sap/generator-hdb-project \
