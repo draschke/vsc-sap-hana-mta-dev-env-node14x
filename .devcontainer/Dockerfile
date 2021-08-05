@@ -18,6 +18,16 @@ ENV XSCLI="/workspaces/vscode-sap-hana-dev-env-for-running-hana-cli/XS_CLIENT00P
 ENV PATH=$PATH:${XSCLI}/bin
 ENV npm config set registry https://registry.npmjs.org/
 
+# # # Prepare for apt-based install of Cloud Foundry CLI by adding Cloud Foundry Foundation public key & package repository
+# # # (see https://docs.cloudfoundry.org/cf-cli/install-go-cli.html#pkg-linux).
+RUN wget -q -O - https://packages.cloudfoundry.org/debian/cli.cloudfoundry.org.key | sudo apt-key add - ; \
+    echo "deb https://packages.cloudfoundry.org/debian stable main" | sudo tee /etc/apt/sources.list.d/cloudfoundry-cli.list
+
+# # # Install kubectl (K8s)
+RUN curl -LO https://storage.googleapis.com/kubernetes-release/release/$(curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt)/bin/linux/amd64/kubectl \
+    && chmod +x ./kubectl \
+    && mv ./kubectl /usr/local/bin
+
 # # Alter node user as needed, install tslint, typescript. eslint is installed by javascript image
 RUN if [ "$USER_GID" != "1000" ] || [ "$USER_UID" != "1000" ]; then \
     groupmod --gid $USER_GID $USERNAME \
@@ -30,8 +40,7 @@ RUN if [ "$USER_GID" != "1000" ] || [ "$USER_UID" != "1000" ]; then \
     # && sudo -u ${USERNAME} npm set @sap:registry=https://npm.sap.com -g\
     # Install global node modules for SAP CAP and frontend development.
     && npm config set registry https://registry.npmjs.org/ \
-    && sudo -u ${USERNAME} nvm i --lts --latest-npm \
-    && npm i @sap/cds-dk \
+    && sudo -u ${USERNAME} npm i @sap/cds-dk \
     -g mta \
     -g yo \
     -g @sap/generator-base-mta-module \
@@ -42,17 +51,7 @@ RUN if [ "$USER_GID" != "1000" ] || [ "$USER_UID" != "1000" ]; then \
      @sap/generator-cap-project \
      @sap/generator-fiori \
      @sap/generator-hdb-project \
-     typescript \
-     hana-cli
-# # # Prepare for apt-based install of Cloud Foundry CLI by adding Cloud Foundry Foundation public key & package repository
-# # # (see https://docs.cloudfoundry.org/cf-cli/install-go-cli.html#pkg-linux).
-RUN wget -q -O - https://packages.cloudfoundry.org/debian/cli.cloudfoundry.org.key | sudo apt-key add - ; \
-    echo "deb https://packages.cloudfoundry.org/debian stable main" | sudo tee /etc/apt/sources.list.d/cloudfoundry-cli.list
-
-# # # Install kubectl (K8s)
-RUN curl -LO https://storage.googleapis.com/kubernetes-release/release/$(curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt)/bin/linux/amd64/kubectl \
-    && chmod +x ./kubectl \
-    && mv ./kubectl /usr/local/bin
+     hana-cli 
 
 # # # Install extra tools for CAP development & deployment.
 RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
@@ -60,7 +59,7 @@ RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
 
 # ps needs to be available to be able to be used in docker.inside, see https://issues.jenkins-ci.org/browse/JENKINS-40101
 RUN apt-get update \
-   && apt-get install --yes --no-install-recommends procps unzip \
-   && rm -rf /var/lib/apt/lists/* \
-   && mkdir --parents ${XSCLI} \
-   && chown --recursive ${USERNAME}:${USERNAME} ${XSCLI}
+    && apt-get install --yes --no-install-recommends procps unzip \
+    && rm -rf /var/lib/apt/lists/* \
+    && mkdir --parents ${XSCLI} \
+    && chown --recursive ${USERNAME}:${USERNAME} ${XSCLI} 
