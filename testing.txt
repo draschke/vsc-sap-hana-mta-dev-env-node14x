@@ -7,7 +7,7 @@ $ yo
 May we anonymously report usage statistics to improve the tool over time? 
 -->  No 
 Easy Ui5 
-  generator-ui5-project
+  generator-ui5-project https://github.com/ui5-community/generator-ui5-project/
    What do you want to do? Create a new OpenUI5/SAPUI5 project
 
    com.myorg.myUI5App
