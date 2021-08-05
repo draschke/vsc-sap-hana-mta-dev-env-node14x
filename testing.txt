@@ -1,0 +1,27 @@
+yo base-mta-module --mtaFilePath=/workspaces/vscode-sap-hana-dev-env-for-running-hana-cli/mta.yaml --defaultName=ui5
+yo @sap/base-mta-module --mtaFilePath=/workspaces/vscode-sap-hana-dev-env-for-running-hana-cli/mta1.yaml --defaultName=ui5
+
+npm install -g mta
+
+$ yo
+May we anonymously report usage statistics to improve the tool over time? 
+-->  No 
+Easy Ui5 
+  generator-ui5-project https://github.com/ui5-community/generator-ui5-project/
+   What do you want to do? Create a new OpenUI5/SAPUI5 project
+
+   com.myorg.myUI5App
+   com.myorg.myUI5App/db
+
+   yo @sap/base-mta-module --mtaFilePath=/workspaces/com.myorg.myUI5App/db.yaml --defaultName=ui5
+
+   Wizard (F1)
+   Open Template Wizard
+- creates a HDB module
+
+curl -LO "https://dl.k8s.io/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl.sha256"
+kubectl
+=====
+RUN curl -LO https://storage.googleapis.com/kubernetes-release/release/$(curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt)/bin/linux/amd64/kubectl
+RUN chmod +x ./kubectl
+RUN mv ./kubectl /usr/local/bin

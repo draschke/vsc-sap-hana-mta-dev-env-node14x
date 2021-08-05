@@ -30,11 +30,14 @@ RUN if [ "$USER_GID" != "1000" ] || [ "$USER_UID" != "1000" ]; then \
     # && sudo -u ${USERNAME} npm set @sap:registry=https://npm.sap.com -g\
     # Install global node modules for SAP CAP and frontend development.
     && npm config set registry https://registry.npmjs.org/ \
-    && sudo -u ${USERNAME} npm install -g @ui5/cli \
-     @sap/cds-dk yo \
+    && sudo -u ${USERNAME} npm i @sap/cds-dk \
+    -g mta \
+    -g yo \
+    -g @sap/generator-base-mta-module \
+    -g @sap/generator-fiori \    
+     -g yo generator-easy-ui5 \
      @sapui5/generator-sapui5-templates \
      @sap/generator-add-hdb-module \
-     @sap/generator-base-mta-module \
      @sap/generator-cap-project \
      @sap/generator-fiori \
      @sap/generator-hdb-project \
@@ -44,6 +47,11 @@ RUN if [ "$USER_GID" != "1000" ] || [ "$USER_UID" != "1000" ]; then \
 # # # (see https://docs.cloudfoundry.org/cf-cli/install-go-cli.html#pkg-linux).
 RUN wget -q -O - https://packages.cloudfoundry.org/debian/cli.cloudfoundry.org.key | sudo apt-key add - ; \
     echo "deb https://packages.cloudfoundry.org/debian stable main" | sudo tee /etc/apt/sources.list.d/cloudfoundry-cli.list
+
+# # # Install kubectl (K8s)
+RUN curl -LO https://storage.googleapis.com/kubernetes-release/release/$(curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt)/bin/linux/amd64/kubectl \
+    && chmod +x ./kubectl \
+    && mv ./kubectl /usr/local/bin
 
 # # # Install extra tools for CAP development & deployment.
 RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
