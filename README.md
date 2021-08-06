@@ -43,7 +43,7 @@
   - [XS Client (XSA)](https://launchpad.support.sap.com/#/softwarecenter/template/products/related/_APP=00200682500000001943&_EVENT=DISPHIER&HEADER=Y&FUNCTIONBAR=N&EVENT=TREE&NE=NAVIGATE&ENR=73554900100900001301&V=MAINT/SAP%20HANA%20PLATFORM%20EDITION%202.0)
   - [CF Client (Cloud Foundry)](https://docs.cloudfoundry.org/cf-cli/install-go-cli.html#pkg-linux)
   - [HANA Client](https://www.npmjs.com/package/hana-cli)
-
+  - [Kubernetes](https://kubernetes.io/docs/tasks/tools/install-kubectl-linux/)
 ### VS Code Extensions
   - A lot of nice extensions
   
