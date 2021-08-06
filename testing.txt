@@ -18,3 +18,4 @@ Easy Ui5
    Wizard (F1)
    Open Template Wizard
 - creates a HDB module
+
