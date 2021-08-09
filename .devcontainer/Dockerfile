@@ -57,13 +57,16 @@ RUN if [ "$USER_GID" != "1000" ] || [ "$USER_UID" != "1000" ]; then \
 RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
     && apt-get -y install --no-install-recommends sqlite cf-cli
 
-# ps needs to be available to be able to be used in docker.inside, see https://issues.jenkins-ci.org/browse/JENKINS-40101
-RUN apt-get update \
-    && apt-get install --yes --no-install-recommends procps unzip \
-    && rm -rf /var/lib/apt/lists/* \
-    && mkdir --parents ${XSCLI} \
-    && chown --recursive ${USERNAME}:${USERNAME} ${XSCLI} 
 
+# Helm package --> Unable to locate package echo
+#  RUN apt-get -y update \
+#     && sudo -u ${USERNAME} curl https://baltocdn.com/helm/signing.asc | apt-key add - \
+#     && apt-get -y install apt-transport-https \
+#     echo "deb https://baltocdn.com/helm/stable/debian/ all main" | tee /etc/apt/sources.list.d/helm-stable-debian.list \
+#     && apt-get -y update \
+#     && apt-get -y install helm
+
+# Install docker
 RUN apt-get -y update \
     && apt-get -y install curl \
     && apt-get -y install apt-transport-https \
@@ -84,3 +87,17 @@ RUN sudo -u ${USERNAME} curl -fsSL https://download.docker.com/linux/debian/gpg 
     # $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null \
     && apt-get -y update \
     && apt-get -y install docker.io
+
+
+# XS CLI for running against HANA XSA
+RUN apt-get update \
+    && apt-get install --yes --no-install-recommends procps unzip \
+    && rm -rf /var/lib/apt/lists/* \
+    && mkdir --parents ${XSCLI} \
+    && chown --recursive ${USERNAME}:${USERNAME} ${XSCLI} 
+
+
+# curl -Lo minikube https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64 \
+#   && chmod +x minikube
+
+# sudo cp minikube /usr/local/bin && rm minikube
