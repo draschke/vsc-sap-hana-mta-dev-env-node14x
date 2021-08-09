@@ -55,6 +55,7 @@
 - [CF Client (Cloud Foundry)](https://docs.cloudfoundry.org/cf-cli/install-go-cli.html#pkg-linux)
 - [HANA Client](https://www.npmjs.com/package/hana-cli)
 - [Kubernetes](https://kubernetes.io/docs/tasks/tools/install-kubectl-linux/)
+- [Docker](https://code.visualstudio.com/docs/containers/choosing-dev-environment#_enabling-docker-cli-inside-a-remote-development-environment)
 
 ### VS Code Extensions
 
@@ -70,6 +71,7 @@
 - @sap/generator-hdb-project
 - [@sapui5/generator-sapui5-templates](https://www.npmjs.com/package/@sapui5/generator-sapui5-templates)
 - typescript
+- [docker](https://docs.docker.com/get-docker/)
 
 ## Tutorials
 
@@ -79,8 +81,8 @@
 - [Developing inside Container](https://code.visualstudio.com/docs/remote/containers)
 
 ### Nice blog "SAP CAP VS Code dev container" written by @htammen
-
-- [Develop SAP CAP apps inside a VS Code Docker Container](https://blogs.sap.com/2020/02/20/develop-sap-cap-apps-inside-a-vs-code-docker-container/)
+ap.c
+- [Develop SAP CAP apps inside a VS Code Docker Container](https://blogs.som/2020/02/20/develop-sap-cap-apps-inside-a-vs-code-docker-container/)
 
 ### HANA CLI by @jung-thomas
 

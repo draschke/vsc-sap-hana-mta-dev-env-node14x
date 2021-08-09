@@ -1,10 +1,6 @@
-yo base-mta-module --mtaFilePath=/workspaces/vscode-sap-hana-dev-env-for-running-hana-cli/mta.yaml --defaultName=ui5
-yo @sap/base-mta-module --mtaFilePath=/workspaces/vscode-sap-hana-dev-env-for-running-hana-cli/mta1.yaml --defaultName=ui5
 
-
-// "startAll": "npm install --prefix /workspaces/vsc-sap-hana-mta-dev-env-node10x/t3e && npm audit fix --prefix /workspaces/vsc-sap-hana-mta-dev-env-node10x/t3e && npm install --prefix /workspaces/vsc-sap-hana-mta-dev-env-node10x/t3e/db && npm install --prefix /workspaces/vsc-sap-hana-mta-dev-env-node10x/t3e/js && npm start --prefix /workspaces/vsc-sap-hana-mta-dev-env-node10x/t3e/js && npm audit fix --prefix /workspaces/vsc-sap-hana-mta-dev-env-node10x/t3e/js && npm install --prefix /workspaces/vsc-sap-hana-mta-dev-env-node10x/t3e/web &&  npm start --prefix /workspaces/vsc-sap-hana-mta-dev-env-node10x/t3e/db"
-
-npm install -g mta
+check global npms 
+npm list -g --depth=0
 
 $ yo
 May we anonymously report usage statistics to improve the tool over time? 
@@ -77,6 +73,7 @@ sudo apt-get update
 
 sudo apt-get -y install docker-ce docker-ce-cli containerd.io
 
+nvm install --lts --latest-npm --> dont use it 
 
 npm list -g --depth=0
 node ➜ /workspaces/vsc-sap-hana-mta-dev-env-node14x (main ✗) $ npm list -g --depth=0
@@ -131,3 +128,46 @@ RUN sudo -u ${USERNAME}  curl -o- https://raw.githubusercontent.com/creationix/n
     # && echo "[[ -s $NVM_DIR/nvm.sh ]] && . $NVM_DIR/nvm.sh" >> $HOME/.bashrc; \
     # && echo "[[  -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh" # This loads nvm
     && nvm install --lts --latest-npm
+
+
+https://developers.sap.com/group.scp-3-first-app.html
+    https://developers.sap.com/tutorials/cp-cf-entitlements-add.html
+
+root ➜ /workspaces/vsc-sap-hana-mta-dev-env-node14x/cloud-cap-risk-management (cap/freestyle-ui5-app ✗) $ 
+install manuall docker
+sudo -s
+apt-get -y update \
+    && apt-get -y install curl \
+    && apt-get -y install apt-transport-https \
+    && apt-get -y install ca-certificates \
+    && apt-get -y install gnupg \
+    && apt-get -y install lsb-release 
+
+apt-get -y update \
+    && curl -fsSL https://download.docker.com/linux/debian/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg \
+    echo   "deb [arch=amd64 signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/debian \
+    $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null \
+    && apt-get -y update \
+    && apt-get -y install docker.io
+   # && apt-get -y install docker-ce-cli
+    # sudo apt install docker-ce  
+    --> E: Unable to locate package containerd
+
+    sudo apt-get install docker.io
+
+    #10 1.909 Reading package lists...
+#10 1.986 E: List directory /var/lib/apt/lists/partial is missing. - Acquire (13
+: Permission denied)
+
+
+https://code.visualstudio.com/docs/containers/choosing-dev-environment#_development-container
+Next, ensure that Docker socket is mapped into the development container (in .devcontainer/devcontainer.json):
+
+    ...
+    "runArgs": [ "-v", "/var/run/docker.sock:/var/run/docker.sock"]
+
+
+node ➜ /workspaces/vsc-sap-hana-mta-dev-env-node14x (main ✗) $ sudo -s
+root ➜ /workspaces/vsc-sap-hana-mta-dev-env-node14x (main ✗) $ docker ps -a
+CONTAINER ID        IMAGE                                                                       COMMAND                  CREATED             STATUS              PORTS               NAMES
+1c76ea49808e        vsc-vsc-sap-hana-mta-dev-env-node14x-9ee1ea2026b706c032e0c06c3afa52c0-uid   "/bin/sh -c 'echo Co…"   3 minutes ago       Up 3 minutes                            vigorous_bell
