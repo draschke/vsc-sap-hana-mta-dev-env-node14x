@@ -45,13 +45,13 @@ RUN if [ "$USER_GID" != "1000" ] || [ "$USER_UID" != "1000" ]; then \
     -g yo \
     -g @sap/generator-base-mta-module \
     -g @sap/generator-fiori \    
-     -g yo generator-easy-ui5 \
-     @sapui5/generator-sapui5-templates \
-     @sap/generator-add-hdb-module \
-     @sap/generator-cap-project \
-     @sap/generator-fiori \
-     @sap/generator-hdb-project \
-     hana-cli 
+    -g yo generator-easy-ui5 \
+    @sapui5/generator-sapui5-templates \
+    @sap/generator-add-hdb-module \
+    @sap/generator-cap-project \
+    @sap/generator-fiori \
+    @sap/generator-hdb-project \
+    hana-cli 
 
 # # # Install extra tools for CAP development & deployment.
 RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
@@ -64,16 +64,20 @@ RUN apt-get update \
     && mkdir --parents ${XSCLI} \
     && chown --recursive ${USERNAME}:${USERNAME} ${XSCLI} 
 
-RUN sudo -s apt-get -y update \
+RUN apt-get -y update \
     && apt-get -y install curl \
     && apt-get -y install apt-transport-https \
     && apt-get -y install ca-certificates \
     && apt-get -y install gnupg \
-    && apt-get -y install lsb-release  \
-    && apt-get -y update \
+    && apt-get -y install lsb-release \
     && apt-get -y install software-properties-common \
-    && rm -rf /var/lib/apt/lists/* \
-    && curl -fsSL https://download.docker.com/linux/debian/gpg | apt-key add - \
+    && rm -rf /var/lib/apt/lists/*
+
+RUN sudo -s groupadd docker \
+    && usermod -aG docker ${USERNAME} \
+    && newgrp docker
+
+RUN sudo -u ${USERNAME} curl -fsSL https://download.docker.com/linux/debian/gpg | apt-key add - \
     && add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/debian $(lsb_release -cs) stable" \
     # && curl -fsSL https://download.docker.com/linux/debian/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg \
     # echo   "deb [arch=amd64 signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/debian \
