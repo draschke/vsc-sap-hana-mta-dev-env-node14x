@@ -41,7 +41,7 @@
 #### Use forwardPorts and postCreateCommand (.devcontainer/devcontainer.json)
 
 - "forwardPorts": [3000]
-- "postCreateCommand": "npm install
+- "postCreateCommand": "npm install"
 
 ## This VS Dev Container includes
 
