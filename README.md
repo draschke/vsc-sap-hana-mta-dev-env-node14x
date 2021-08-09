@@ -3,14 +3,12 @@
 ## The approach of this project is to share the same required dev environment of VS Code Dev Containers with colleagues and making the start for new team members more easy
 
 - [see 2 Dev Containers for node 10 & 14](https://github.com/draschke/vsc-sap-hana-mta-dev-env-node14x/blob/main/images/2-monitors.png)
-<br/><br/> 
 
 ## Prerequisites
 
 - [Install Docker Desktop on Windows](https://docs.docker.com/docker-for-windows/install/)
 
 - [Install this VS Code Containers extension at first](https://code.visualstudio.com/docs/remote/containers-tutorial#_install-the-extension)
-
 
 - XS Client for SAP HANA XSA (Only required for connecting a XSA platform)
   - [Download the XS_CLIENT00P_xxx-70001320 for Linux from SAP Download Center](https://launchpad.support.sap.com/#/softwarecenter/template/products/related/_APP=00200682500000001943&_EVENT=DISPHIER&HEADER=Y&FUNCTIONBAR=N&EVENT=TREE&NE=NAVIGATE&ENR=73554900100900001301&V=MAINT/SAP%20HANA%20PLATFORM%20EDITION%202.0)
@@ -22,7 +20,7 @@
     - XS_CLIENT00P_134-70001320/bin
       - chmod -R +x xs
     - XS_CLIENT00P_134-70001320/sapjvm_8_jre/
-      - chmod -R +x bin 
+      - chmod -R +x bin
       - [look at this issue if you need help](https://github.com/draschke/vscode-sap-hana-dev-env-for-running-hana-cli/issues/1#issuecomment-891732622)
 
 ## Hints
@@ -37,17 +35,15 @@
     \\wsl$\Ubuntu-20.04\home\
     ```
 
-- Use [VS Code CLI](https://code.visualstudio.com/docs/editor/command-line) 
+- Use [VS Code CLI](https://code.visualstudio.com/docs/editor/command-line)
   - Install all the same "Dev Container"-Extensions in WSL by running CLI command [code --install-extension](https://github.com/draschke/vsc-sap-hana-mta-dev-env-node14x/blob/main/install-extensions.txt)
-
 
 #### Use forwardPorts and postCreateCommand (.devcontainer/devcontainer.json)
 
 - "forwardPorts": [3000]
 - "postCreateCommand": "npm install
-  <br/><br/>
 
-## This VS Dev Container includes:
+## This VS Dev Container includes
 
 ### OS
 
@@ -74,7 +70,6 @@
 - @sap/generator-hdb-project
 - [@sapui5/generator-sapui5-templates](https://www.npmjs.com/package/@sapui5/generator-sapui5-templates)
 - typescript
-<br/><br/>
 
 ## Tutorials
 
@@ -90,7 +85,6 @@
 ### HANA CLI by @jung-thomas
 
 - [SAP HANA Developer Command Line Interface](https://github.com/SAP-samples/hana-developer-cli-tool-example)
-<br/><br/>
 
 ## Contributing
 

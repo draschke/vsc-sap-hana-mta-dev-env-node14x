@@ -4,10 +4,10 @@
   "name": "SAP HANA App development for XSA & CF for Node.js 14.x",
   "dockerFile": "Dockerfile",
 
-//   // Set *default* container specific settings.json values on container create.
-//   "settings": {
-//     "workbench.colorTheme": "codeSTACKr Theme"
-//   },
+  // Set *default* container specific settings.json values on container create.
+  "settings": {
+    "workbench.colorTheme": "codeSTACKr Theme"
+  },
 
   // Add the IDs of extensions you want installed when the container is created.
 	"extensions": [
