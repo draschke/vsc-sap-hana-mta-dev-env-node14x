@@ -14,6 +14,7 @@ FROM mcr.microsoft.com/vscode/devcontainers/javascript-node:14
 ARG USERNAME=node
 ARG USER_UID=1000
 ARG USER_GID=$USER_UID
+ENV KUBECONFIG="/usr/local/share/kube-devcontainer/kubeconfig.yml"
 ENV XSCLI="/workspaces/vsc-sap-hana-mta-dev-env-node14x/XS_CLIENT00P_134-70001320"
 ENV PATH=$PATH:${XSCLI}/bin
 ENV npm config set registry https://registry.npmjs.org/
@@ -23,10 +24,6 @@ ENV npm config set registry https://registry.npmjs.org/
 RUN wget -q -O - https://packages.cloudfoundry.org/debian/cli.cloudfoundry.org.key | sudo apt-key add - ; \
     echo "deb https://packages.cloudfoundry.org/debian stable main" | sudo tee /etc/apt/sources.list.d/cloudfoundry-cli.list
 
-# # # Install kubectl (K8s)
-RUN curl -LO https://storage.googleapis.com/kubernetes-release/release/$(curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt)/bin/linux/amd64/kubectl \
-    && chmod +x ./kubectl \
-    && mv ./kubectl /usr/local/bin
 
 # # Alter node user as needed, install tslint, typescript. eslint is installed by javascript image
 RUN if [ "$USER_GID" != "1000" ] || [ "$USER_UID" != "1000" ]; then \
@@ -53,18 +50,43 @@ RUN if [ "$USER_GID" != "1000" ] || [ "$USER_UID" != "1000" ]; then \
     @sap/generator-hdb-project \
     hana-cli 
 
+# # # Install kubectl (K8s)
+RUN curl -LO https://storage.googleapis.com/kubernetes-release/release/$(curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt)/bin/linux/amd64/kubectl \
+    && chmod +x ./kubectl \
+    && mv ./kubectl /usr/local/bin
+
+# create directory for mounting .kube
+RUN cd /usr/local/share && sudo -s mkdir kube-devcontainer \
+    && sudo -s chmod 755 ./kube-devcontainer/ \
+    && sudo -s chown --recursive ${USERNAME}:${USERNAME} ./kube-devcontainer/ 
+
 # # # Install extra tools for CAP development & deployment.
 RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
     && apt-get -y install --no-install-recommends sqlite cf-cli
 
+# Install minikube
+RUN curl -Lo minikube https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64 \
+    && chmod +x minikube \
+    && sudo -s cp minikube /usr/local/bin && rm minikube
 
 # Helm package --> Unable to locate package echo
-#  RUN apt-get -y update \
-#     && sudo -u ${USERNAME} curl https://baltocdn.com/helm/signing.asc | apt-key add - \
+#  RUN sudo -s apt-get -y update \
+#     && sudo -s curl https://baltocdn.com.kube.kube/helm/signing.asc | apt-key add - \
 #     && apt-get -y install apt-transport-https \
 #     echo "deb https://baltocdn.com/helm/stable/debian/ all main" | tee /etc/apt/sources.list.d/helm-stable-debian.list \
 #     && apt-get -y update \
 #     && apt-get -y install helm
+
+
+# RUN apk add --no-cache ca-certificates bash git openssh curl gettext jq bind-tools \
+#     && wget -q https://storage.googleapis.com/kubernetes-release/release/v1.21.2/bin/linux/amd64/kubectl -O /usr/local/bin/kubectl \
+#     && chmod +x /usr/local/bin/kubectl \
+ RUN  wget -q https://get.helm.sh/helm-v3.6.3-linux-amd64.tar.gz -O - | tar -xzO linux-amd64/helm > /usr/local/bin/helm \
+    && chmod +x /usr/local/bin/helm \
+    && chmod g+rwx /root \
+    # && mkdir /config \
+    # && chmod g+rwx /config \
+    && helm repo add "stable" "https://charts.helm.sh/stable" --force-update
 
 # Install docker
 RUN apt-get -y update \
@@ -94,10 +116,4 @@ RUN apt-get update \
     && apt-get install --yes --no-install-recommends procps unzip \
     && rm -rf /var/lib/apt/lists/* \
     && mkdir --parents ${XSCLI} \
-    && chown --recursive ${USERNAME}:${USERNAME} ${XSCLI} 
-
-
-# curl -Lo minikube https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64 \
-#   && chmod +x minikube
-
-# sudo cp minikube /usr/local/bin && rm minikube
+    && chown --recursive ${USERNAME}:${USERNAME} ${XSCLI}
