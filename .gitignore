@@ -10,6 +10,9 @@ t3e
 Installation
 cloud-cap-risk-management
 cap-kyma-app
+install.txt
+cap-kyma-app.txt
+testing.txt
 
 # node
 # ====
@@ -133,4 +136,6 @@ dist
 .yarn/install-state.gz
 .pnp.*
 issues
-install.txt
+
+cap-kyma-app.txt
+testing.txt
