@@ -1,0 +1,124 @@
+Create a folder for your example:
+mkdir cap-kyma-app
+
+
+Build the docker image locally:
+node ➜ /workspaces/vsc-sap-hana-mta-dev-env-node14x/cap-kyma-app (main ✗) 
+$ docker build -t cpapp ..
+--> cpapp:latest (030cbbeca7fb)
+
+docker run -p 4004:4004 -t cpapp
+
+node ➜ /workspaces/vsc-sap-hana-mta-dev-env-node14x/cap-kyma-app (main ✗) $ env | grep KUBECONFIG
+KUBECONFIG=/usr/local/share/kube-devcontainer/kubeconfig.yml
+
+kubectl get pods
+node ➜ /workspaces/vsc-sap-hana-mta-dev-env-node14x/cap-kyma-app (main ✗) $ kubectl get pods
+NAME                               READY   STATUS    RESTARTS   AGE
+docker-registry-5477fb77c6-rrz9l   2/2     Running   0          82m
+
+node ➜ /workspaces/vsc-sap-hana-mta-dev-env-node14x/cap-kyma-app (main ✗) $ kubectl get pods
+No resources found in default namespace.
+
+
+kubectl get namespaces
+node ➜ /workspaces/vsc-sap-hana-mta-dev-env-node14x/cap-kyma-app (main ✗) $ kubectl get namespaces
+NAME               STATUS   AGE
+compass-system     Active   8d
+default            Active   8d
+
+node ➜ /workspaces/vsc-sap-hana-mta-dev-env-node14x/cap-kyma-app (main ✗) $ helm repo add stable https://charts.helm.sh/stable
+WARNING: Kubernetes configuration file is group-readable. This is insecure. Location: /usr/local/share/kube-devcontainer/kubeconfig.yml
+WARNING: Kubernetes configuration file is world-readable. This is insecure. Location: /usr/local/share/kube-devcontainer/kubeconfig.yml
+"stable" has been added to your repositories
+
+node ➜ /workspaces/vsc-sap-hana-mta-dev-env-node14x/cap-kyma-app (main ✗) $ helm install docker-registry stable/docker-registry
+WARNING: Kubernetes configuration file is group-readable. This is insecure. Location: /usr/local/share/kube-devcontainer/kubeconfig.yml
+WARNING: Kubernetes configuration file is world-readable. This is insecure. Location: /usr/local/share/kube-devcontainer/kubeconfig.yml
+WARNING: This chart is deprecated
+
+node ➜ /workspaces/vsc-sap-hana-mta-dev-env-node14x/cap-kyma-app (main ✗) $ helm repo add stable https://charts.helm.sh/stable --force-update
+WARNING: Kubernetes configuration file is group-readable. This is insecure. Location: /usr/local/share/kube-devcontainer/kubeconfig.yml
+WARNING: Kubernetes configuration file is world-readable. This is insecure. Location: /usr/local/share/kube-devcontainer/kubeconfig.yml
+"stable" has been added to your repositories
+
+
+Issue Error: cannot re-use a name that is still in use --> remove Secrets and Config Maps etc
+node ➜ /workspaces/vsc-sap-hana-mta-dev-env-node14x/cap-kyma-app (main ✗) $ helm install docker-registry stable/docker-registry
+WARNING: Kubernetes configuration file is group-readable. This is insecure. Location: /usr/local/share/kube-devcontainer/kubeconfig.yml
+WARNING: Kubernetes configuration file is world-readable. This is insecure. Location: /usr/local/share/kube-devcontainer/kubeconfig.yml
+WARNING: This chart is deprecated
+NAME: docker-registry
+LAST DEPLOYED: Tue Aug 10 13:19:17 2021
+NAMESPACE: default
+STATUS: deployed
+REVISION: 1
+TEST SUITE: None
+NOTES:
+1. Get the application URL by running these commands:
+  export POD_NAME=$(kubectl get pods --namespace default -l "app=docker-registry,release=docker-registry" -o jsonpath="{.items[0].metadata.name}")
+  echo "Visit http://127.0.0.1:8080 to use your application"
+  kubectl -n default port-forward $POD_NAME 8080:5000
+
+node ➜ /workspaces/vsc-sap-hana-mta-dev-env-node14x/cap-kyma-app (main ✗) $ kubectl apply -f - <<EOF
+> apiVersion: gateway.kyma-project.io/v1alpha1
+> kind: APIRule
+> metadata:
+>   labels:
+>     app: docker-registry
+>   name: docker-registry
+> spec:
+>   service:
+>     host: docker-registry
+>     name: docker-registry
+>     port: 5000
+>   gateway: kyma-gateway.kyma-system.svc.cluster.local
+>   rules:
+>     - path: /.*
+>       methods: ["GET", "HEAD" ]
+>       accessStrategies:
+>         - handler: noop
+>       mutators: []
+> EOF
+apirule.gateway.kyma-project.io/docker-registry unchanged
+
+node ➜ /workspaces/vsc-sap-hana-mta-dev-env-node14x/cap-kyma-app (main ✗) 
+$ kubectl port-forward deployment/docker-registry 5000:5000 &
+[1] 6219
+node ➜ /workspaces/vsc-sap-hana-mta-dev-env-node14x/cap-kyma-app (main ✗) 
+$ Forwarding from 127.0.0.1:5000 -> 5000
+
+new Terminal
+node ➜ /workspaces/vsc-sap-hana-mta-dev-env-node14x/cap-kyma-app (main ✗) 
+$ docker tag cpapp 0.0.0.0:5000/cpapp
+
+node ➜ /workspaces/vsc-sap-hana-mta-dev-env-node14x/cap-kyma-app (main ✗) 
+$ docker push 0.0.0.0:5000/cpapp
+
+The push refers to repository [0.0.0.0:5000/cpapp]
+Get http://0.0.0.0:5000/v2/: dial tcp 0.0.0.0:5000: connect: connection refused
+
+$ cat ~/.docker/daemon.json 
+{
+  "insecure-registries" : [
+    "localhost:5000",
+    "127.0.0.1:5000"
+  ],
+  "debug" : true,
+  "experimental" : true
+}
+
+https://stackoverflow.com/questions/51468491/how-kubectl-port-forward-works
+
+node ➜ /workspaces/vsc-sap-hana-mta-dev-env-node14x/cap-kyma-app (main ✗) 
+$ Forwarding from 127.0.0.1:5000 -> 5000
+
+Forwarding from [::1]:5000 -> 5000 --> miss this line
+
+node ➜ /workspaces/vsc-sap-hana-mta-dev-env-node14x (main ✗) 
+$ Forwarding from 127.0.0.1:5000 -> 5000
+docker push 0.0.0.0:5000/cpapp
+The push refers to repository [0.0.0.0:5000/cpapp]
+Get http://0.0.0.0:5000/v2/: dial tcp 0.0.0.0:5000: connect: connection refused
+
+

@@ -3,7 +3,7 @@
 # Licensed under the MIT License. See https://go.microsoft.com/fwlink/?linkid=2090316 for license information.
 #-------------------------------------------------------------------------------------------------------------
 
-FROM mcr.microsoft.com/vscode/devcontainers/javascript-node:14
+FROM mcr.microsoft.com/vscode/devcontainers/javascript-node:16
 
 # The javascript-node image includes a non-root node user with sudo access. Use 
 # the "remoteUser" property in devcontainer.json to use it. On Linux, the container 
@@ -14,6 +14,7 @@ FROM mcr.microsoft.com/vscode/devcontainers/javascript-node:14
 ARG USERNAME=node
 ARG USER_UID=1000
 ARG USER_GID=$USER_UID
+# ARG EXTRA_NODE_VERSION=14
 ENV KUBECONFIG="/usr/local/share/kube-devcontainer/kubeconfig.yml"
 ENV XSCLI="/workspaces/vsc-sap-hana-mta-dev-env-node14x/XS_CLIENT00P_134-70001320"
 ENV PATH=$PATH:${XSCLI}/bin
@@ -23,6 +24,9 @@ ENV npm config set registry https://registry.npmjs.org/
 # # # (see https://docs.cloudfoundry.org/cf-cli/install-go-cli.html#pkg-linux).
 RUN wget -q -O - https://packages.cloudfoundry.org/debian/cli.cloudfoundry.org.key | sudo apt-key add - ; \
     echo "deb https://packages.cloudfoundry.org/debian stable main" | sudo tee /etc/apt/sources.list.d/cloudfoundry-cli.list
+
+# Install an additional version of node using nvm
+# RUN su node -c "source /usr/local/share/nvm/nvm.sh && nvm install ${EXTRA_NODE_VERSION}"
 
 # # Alter node user as needed, install tslint, typescript. eslint is installed by javascript image
 RUN if [ "$USER_GID" != "1000" ] || [ "$USER_UID" != "1000" ]; then \
@@ -61,7 +65,8 @@ RUN cd /usr/local/share && sudo -s mkdir kube-devcontainer \
 
 # # # Install extra tools for CAP development & deployment.
 RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
-    && apt-get -y install --no-install-recommends sqlite cf-cli
+    && apt-get -y install --no-install-recommends apt-utils dialog 2>&1 \
+    && apt-get -y install sqlite cf-cli
 
 # Install minikube
 RUN curl -Lo minikube https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64 \

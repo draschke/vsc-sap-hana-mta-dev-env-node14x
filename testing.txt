@@ -75,13 +75,7 @@ sudo apt-get -y install docker-ce docker-ce-cli containerd.io
 
 nvm install --lts --latest-npm --> dont use it 
 
-npm list -g --depth=0
-node ➜ /workspaces/vsc-sap-hana-mta-dev-env-node14x (main ✗) $ npm list -g --depth=0
-/usr/local/share/npm-global/lib
-├── @sap/cds-dk@4.4.1
-├── eslint@7.32.0
-├── mta@1.0.1
-└── typescript@4.3.5
+
 
 node ➜ /workspaces/vsc-sap-hana-mta-dev-env-node14x (main ✗) $ npm list -g --depth=0
 /usr/local/share/npm-global/lib
@@ -94,80 +88,135 @@ node ➜ /workspaces/vsc-sap-hana-mta-dev-env-node14x (main ✗) $ npm list -g -
 ├── typescript@4.3.5
 └── yo@4.3.0
 
-# Install Docker --> E: Unable to locate package containerd
-RUN  apt-get -y update \
-    && apt-get -y install curl \
-    && apt-get -y install apt-transport-https \
-    && apt-get -y install ca-certificates \
-    && apt-get -y install gnupg \
-    && apt-get -y install lsb-release 
-    
- RUN  apt-get -y update \
-    && apt-get remove docker docker-engine docker.io containerd runc \
-    && curl -fsSL https://download.docker.com/linux/debian/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg \
-    echo   "deb [arch=amd64 signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/debian \
-    $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null \
-    && apt-get -y update \
-    && apt-get -y install docker-ce-cli
-    # sudo apt install docker-ce    
 
 
-    export NVM_DIR="$HOME/.nvm"
+https://sap-samples.github.io/cloud-cap-risk-management/Kyma/
 
-https://gdevops.gitlab.io/tuto_javascript/installation/nvm/nvm.html
-    export NVM_DIR="${XDG_CONFIG_HOME/:-$HOME/.}nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
+node ➜ /workspaces/vsc-sap-hana-mta-dev-env-node14x/cloud-cap-risk-management (cap/freestyle-ui5-app ✗) 
+$ docker build -t cloud-cap-risk-management .
 
+node ➜ /workspaces/vsc-sap-hana-mta-dev-env-node14x/cloud-cap-risk-management (cap/freestyle-ui5-app ✗) 
+$ docker images | grep cloud-cap-risk-managementcloud-cap-risk-management                                                               latest                                                  77b036539c47        2 minutes ago       206MB                                                             latest                                                  77b036539c47        2 minutes ago       206MB
 
-RUN sudo -u ${USERNAME}  curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.34.0/install.sh | bash \
-    && export NVM_DIR=~/.nvm \
-    && source ~/.nvm/nvm.sh \
-# RUN sudo -u ${USERNAME} export NVM_DIR="$HOME/.nvm"; \
-    # && [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" \
-    # && [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  \
-    # && echo "[[ -s $NVM_DIR/nvm.sh ]] && . $NVM_DIR/nvm.sh" >> $HOME/.bashrc; \
-    # && echo "[[  -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh" # This loads nvm
-    && nvm install --lts --latest-npm
+node ➜ /workspaces/vsc-sap-hana-mta-dev-env-node14x/cloud-cap-risk-management (cap/freestyle-ui5-app ✗) $ docker run -i -t 77b036539c47 /bin/bash 
+node@a0af5ea87745:/usr/src/app$ 
 
+cds build
 
-https://developers.sap.com/group.scp-3-first-app.html
-    https://developers.sap.com/tutorials/cp-cf-entitlements-add.html
+VS Code Extension --> Run Interactive
+VS Code Containers --> Attach Shell
 
-root ➜ /workspaces/vsc-sap-hana-mta-dev-env-node14x/cloud-cap-risk-management (cap/freestyle-ui5-app ✗) $ 
-install manuall docker
-sudo -s
-apt-get -y update \
-    && apt-get -y install curl \
-    && apt-get -y install apt-transport-https \
-    && apt-get -y install ca-certificates \
-    && apt-get -y install gnupg \
-    && apt-get -y install lsb-release 
+docker run -p 4004:4004 -t cpapp
 
-apt-get -y update \
-    && curl -fsSL https://download.docker.com/linux/debian/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg \
-    echo   "deb [arch=amd64 signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/debian \
-    $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null \
-    && apt-get -y update \
-    && apt-get -y install docker.io
-   # && apt-get -y install docker-ce-cli
-    # sudo apt install docker-ce  
-    --> E: Unable to locate package containerd
+/usr/local/bin/kubectl
+~/.kube/config
 
-    sudo apt-get install docker.io
-
-    #10 1.909 Reading package lists...
-#10 1.986 E: List directory /var/lib/apt/lists/partial is missing. - Acquire (13
-: Permission denied)
+find your directory
+node ➜ /home/diraschk/.kube $ find / -type d -name kube-devcontainer 2>/dev/null
+/usr/local/share/kube-devcontainer
 
 
-https://code.visualstudio.com/docs/containers/choosing-dev-environment#_development-container
-Next, ensure that Docker socket is mapped into the development container (in .devcontainer/devcontainer.json):
+node ➜ /usr/local/share/kube-devcontainer $ ls -la
+drwxr-x--- 4 node node 4096 May 24 19:00 cache
+-rw-r--r-- 1 node node 5560 Jun 14 06:03 config
+drwxr-xr-x 2 node node 4096 Aug 10 08:08 test
 
-    ...
-    "runArgs": [ "-v", "/var/run/docker.sock:/var/run/docker.sock"]
+Deploy to Kyma
+Choose Get Kubeconfig from the dropdown menu.
+\\wsl$\Ubuntu-20.04\home\diraschk\.kube\kubeconfig.yml
 
+Set the new config file for the running shell process:
+export KUBECONFIG=/usr/local/share/kube-devcontainer/kubeconfig
 
-node ➜ /workspaces/vsc-sap-hana-mta-dev-env-node14x (main ✗) $ sudo -s
-root ➜ /workspaces/vsc-sap-hana-mta-dev-env-node14x (main ✗) $ docker ps -a
-CONTAINER ID        IMAGE                                                                       COMMAND                  CREATED             STATUS              PORTS               NAMES
-1c76ea49808e        vsc-vsc-sap-hana-mta-dev-env-node14x-9ee1ea2026b706c032e0c06c3afa52c0-uid   "/bin/sh -c 'echo Co…"   3 minutes ago       Up 3 minutes                            vigorous_bell
+cf login -a https://api.cf.eu10.hana.ondemand.com -u dirk.raschke@charite.de -p  --skip-ssl-validation
+
+node ➜ /usr/local/share/kube-devcontainer $ cat /usr/local/share/kube-devcontainer/kubeconfig.yml
+
+node ➜ ~ $ export KUBECONFIG=/usr/local/share/kube-localhost/kubeconfig.yml
+node ➜ ~ $ kubectl get pods
+No resources found in default namespace.
+
+node ➜ /workspaces/vsc-sap-hana-mta-dev-env-node14x (main ✗) $ kubectl get namespaces
+NAME               STATUS   AGE
+compass-system     Active   7d23h
+default            Active   7d23h
+istio-system       Active   7d23h
+kube-node-lease    Active   7d23h
+kube-public        Active   7d23h
+kube-system        Active   7d23h
+kyma-installer     Active   7d23h
+kyma-integration   Active   7d23h
+kyma-system        Active   7d23h
+
+node ➜ /workspaces/vsc-sap-hana-mta-dev-env-node14x (main ✗) 
+$ helm repo add stable https://charts.helm.sh/stable
+WARNING: Kubernetes configuration file is group-readable. This is insecure. Location: /usr/local/share/kube-devcontainer/kubeconfig.yml
+WARNING: Kubernetes configuration file is world-readable. This is insecure. Location: /usr/local/share/kube-devcontainer/kubeconfig.yml
+"stable" has been added to your repositories
+
+node ➜ /workspaces/vsc-sap-hana-mta-dev-env-node14x (main ✗) 
+$ helm install docker-registry stable/docker-registry
+WARNING: Kubernetes configuration file is group-readable. This is insecure. Location: /usr/local/share/kube-devcontainer/kubeconfig.yml
+WARNING: Kubernetes configuration file is world-readable. This is insecure. Location: /usr/local/share/kube-devcontainer/kubeconfig.yml
+WARNING: This chart is deprecated
+NAME: docker-registry
+LAST DEPLOYED: Tue Aug 10 10:51:14 2021
+NAMESPACE: default
+STATUS: deployed
+REVISION: 1
+TEST SUITE: None
+NOTES:
+1. Get the application URL by running these commands:
+  export POD_NAME=$(kubectl get pods --namespace default -l "app=docker-registry,release=docker-registry" -o jsonpath="{.items[0].metadata.name}")
+  echo "Visit http://127.0.0.1:8080 to use your application"
+  kubectl -n default port-forward $POD_NAME 8080:5000
+
+node ➜ /workspaces/vsc-sap-hana-mta-dev-env-node14x (main ✗) $ kubectl apply -f - <<EOF
+> apiVersion: gateway.kyma-project.io/v1alpha1
+> kind: APIRule
+> metadata:
+>   labels:
+>     app: docker-registry
+>   name: docker-registry
+> spec:
+>   service:
+>     host: docker-registry
+>     name: docker-registry
+>     port: 5000
+>   gateway: kyma-gateway.kyma-system.svc.cluster.local
+>   rules:
+>     - path: /.*
+>       methods: ["GET", "HEAD" ]
+>       accessStrategies:
+>         - handler: noop
+>       mutators: []
+> EOF
+apirule.gateway.kyma-project.io/docker-registry created  
+
+node ➜ /workspaces/vsc-sap-hana-mta-dev-env-node14x (main ✗) $ cf a
+Getting apps in org 71bdfe8btrial / space dev as dirk.raschke@charite.de...
+OK
+
+node ➜ /workspaces/vsc-sap-hana-mta-dev-env-node14x (main ✗) 
+$ kubectl port-forward deployment/docker-registry 5000:5000 &
+--> [1] 1593
+node ➜ /workspaces/vsc-sap-hana-mta-dev-env-node14x (main ✗) 
+$ Forwarding from 127.0.0.1:5000 -> 5000
+
+node ➜ /workspaces/vsc-sap-hana-mta-dev-env-node14x (main ✗) 
+$ docker tag cloud-cap-risk-management 0.0.0.0:5000/cloud-cap-risk-management
+
+Inspect your image
+    "RepoTags": [
+        "0.0.0.0:5000/cloud-cap-risk-management:latest",
+        "cloud-cap-risk-management:latest"
+    ],
+
+    docker push 0.0.0.0:5000/cloud-cap-risk-management
+
+https://stackoverflow.com/questions/51468491/how-kubectl-port-forward-works
+
+node ➜ /workspaces/vsc-sap-hana-mta-dev-env-node14x/cap-kyma-app (main ✗) 
+$ Forwarding from 127.0.0.1:5000 -> 5000
+
+Forwarding from [::1]:5000 -> 5000 --> miss this line
