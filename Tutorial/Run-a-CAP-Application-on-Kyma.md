@@ -1,6 +1,6 @@
 # My walkthrough to the tutorial "[Run a CAP Application on Kyma](https://sap-samples.github.io/cloud-cap-risk-management/Kyma/)" with this [VS Dev Container](https://github.com/draschke/vsc-sap-hana-mta-dev-env-node14x/blob/ef0b07b2c5621b9daead27db90d8c2f1ace6bc2a/.devcontainer)
 
-- You can follow all the steps that are described here, without to install anything else, unless I have mentioned it. In this walkthrough you will find only additional hint.
+- You can follow all the steps outlined here without having to install anything else unless I have mentioned it. This walkthrough only provides additional quidance.
 [Run a CAP Application on Kyma](https://sap-samples.github.io/cloud-cap-risk-management/Kyma/)
 
 ## Run the CAP application locally in a Dev Container
