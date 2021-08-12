@@ -132,9 +132,15 @@ EOF
 node ➜ /workspaces/vsc-sap-hana-mta-dev-env-node14x/cap-kyma-app (main ✗)
 kubectl port-forward deployment/docker-registry 5000:5000 &
 [1] 6219
+
 node ➜ /workspaces/vsc-sap-hana-mta-dev-env-node14x/cap-kyma-app (main ✗) 
 my output:
 Forwarding from 127.0.0.1:5000 -> 5000
+
+node ➜ /workspaces/vsc-sap-hana-mta-dev-env-node14x/cap-kyma-app (main ✗)
+docker push 0.0.0.0:5000/cpapp
+The push refers to repository [0.0.0.0:5000/cpapp]
+Get http://0.0.0.0:5000/v2/: dial tcp 0.0.0.0:5000: connect: connection refused
 ```
 
 ### Issue: It don't see this expected output
