@@ -62,7 +62,7 @@ node ➜ /workspaces/vsc-sap-hana-mta-dev-env-node14x/cap-kyma-app (main ✗)
 helm repo add stable https://charts.helm.sh/stable
 ```
 
-### 2. Install the Helm Chart for a docker registry:
+### 2. Install the Helm Chart for a docker registry
 
 ```bash
 node ➜ /workspaces/vsc-sap-hana-mta-dev-env-node14x/cap-kyma-app (main ✗)
@@ -106,12 +106,12 @@ my output:
 Forwarding from 127.0.0.1:5000 -> 5000
 ```
 
-### It don't see the expected output
+### It don't see this expected output
 
 ```bash
 Forwarding from 127.0.0.1:5000 -> 5000
 Forwarding from [::1]:5000 -> 5000
 ```
 
-Forwarding from 127.0.0.1:5000 -> 5000
-Forwarding from [::1]:5000 -> 5000
+[Issue Push Image failed](https://github.com/draschke/vsc-sap-hana-mta-dev-env-node14x/issues/5)
+
