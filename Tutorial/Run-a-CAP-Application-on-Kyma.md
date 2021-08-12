@@ -1,13 +1,13 @@
-# My walkthrough for the tutorial "[Run a CAP Application on Kyma](https://sap-samples.github.io/cloud-cap-risk-management/Kyma/)" with this [VS Dev Container](https://github.com/draschke/vsc-sap-hana-mta-dev-env-node14x/blob/ef0b07b2c5621b9daead27db90d8c2f1ace6bc2a/.devcontainer)
+# My walkthrough to the tutorial "[Run a CAP Application on Kyma](https://sap-samples.github.io/cloud-cap-risk-management/Kyma/)" with this [VS Dev Container](https://github.com/draschke/vsc-sap-hana-mta-dev-env-node14x/blob/ef0b07b2c5621b9daead27db90d8c2f1ace6bc2a/.devcontainer)
 
 - You can follow all the steps that are described here, without to install anything else, unless I have mentioned it. In this walkthrough you will find only additional hint.
 [Run a CAP Application on Kyma](https://sap-samples.github.io/cloud-cap-risk-management/Kyma/)
 
-## Run the CAP Application in a Docker Container Locally
+## Run the CAP application locally in a Dev Container
 
 ![Dev Container for CAP on Kyma](../images/img-cap-kyma-app/1cap-kyma-app.png)
 
-## Run the CAP App in an own folder with command "code ."
+## Start the CAP app in a separate folder with the command "code ."
 
 ```bash
 node ➜ /workspaces/vsc-sap-hana-mta-dev-env-node14x/cap-kyma-app (main ✗)
@@ -28,13 +28,15 @@ docker build -t cpapp .
 
 ## Run the Docker Container
 
-### 4. Run the container again with the publish parameter
+### 1. You can run the docker container and look inside its contents
 
 ```bash
 node ➜ /workspaces/vsc-sap-hana-mta-dev-env-node14x/cap-kyma-app (main ✗)
 docker run -p 4004:4004 -t cpapp 
     --> Image: cpapp:latest (030cbbeca7fb)   
 ```
+
+## Run Your CAP Service
 
 ### 4. Check for the created container
 
@@ -54,7 +56,9 @@ docker run -p 4004:4004 -t cpapp
 
 ![Check for the image via VS Code](../images/img-cap-kyma-app/7-browser-shell-cap-kyma-app.png)
 
-## Log In to Kyma (Kubernetes Cluster)
+## Deploy to Kyma
+
+### Log In to Kyma (Kubernetes Cluster)
 
 ### Get your Kubeconfig as described (CF Login required)
 
@@ -65,6 +69,9 @@ node ➜ /workspaces/vsc-sap-hana-mta-dev-env-node14x/cap-kyma-app (main ✗)
 env | grep KUBECONFIG
 KUBECONFIG=/usr/local/share/kube-devcontainer/kubeconfig.yml   
 ```
+
+### Maybe you want run a CLI connection
+cf login -a https://api.cf.eu10.hana.ondemand.com -u email -p psw --skip-ssl-validation
 
 ### Check for your pods, if you have any
 
@@ -84,7 +91,7 @@ compass-system     Active   8d
 default            Active   8d
 ```
 
-## I did this "Prepare the Docker Registry"
+### Prepare the Docker Registry as described
 
 ### 1. Add the stable Helm Chart repository to the helm CLI
 
