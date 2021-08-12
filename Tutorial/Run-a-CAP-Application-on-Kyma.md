@@ -5,6 +5,8 @@
 
 ## Run the CAP Application in a Docker Container Locally
 
+![Dev Container for CAP on Kyma](../images/img-cap-kyma-app/1cap-kyma-app.png)
+
 ### 4. Build the docker image locally
   
 ```bash
