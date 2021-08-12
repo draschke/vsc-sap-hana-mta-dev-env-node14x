@@ -70,8 +70,11 @@ env | grep KUBECONFIG
 KUBECONFIG=/usr/local/share/kube-devcontainer/kubeconfig.yml   
 ```
 
-### Maybe you want run a CLI connection
+### Maybe you want to establish a CLI connection
+
+```bash
 cf login -a https://api.cf.eu10.hana.ondemand.com -u email -p psw --skip-ssl-validation
+```
 
 ### Check for your pods, if you have any
 
@@ -143,7 +146,11 @@ kubectl port-forward deployment/docker-registry 5000:5000 &
 node ➜ /workspaces/vsc-sap-hana-mta-dev-env-node14x/cap-kyma-app (main ✗) 
 my output:
 Forwarding from 127.0.0.1:5000 -> 5000
+```
 
+### Issue: connection refused
+
+```bash
 node ➜ /workspaces/vsc-sap-hana-mta-dev-env-node14x/cap-kyma-app (main ✗)
 docker push 0.0.0.0:5000/cpapp
 The push refers to repository [0.0.0.0:5000/cpapp]
