@@ -8,11 +8,11 @@ com.myorg.myUI5App
 myMTA-Project
 t3e
 Installation
-cloud-cap-risk-management
-cap-kyma-app
 install.txt
-cap-kyma-app.txt
 testing.txt
+test.txt
+test-cap-kyma.txt
+test-sap-tech-bytes.txt
 
 # node
 # ====
@@ -137,9 +137,3 @@ dist
 .pnp.*
 issues
 
-cap-kyma-app.txt
-testing.txt
-test.txt
-test-cap-kyma.txt
-Tutorial/SAP-Tech-Bytes-Using-GitHub-Actions-to-Deploy-Continuously-to-Kyma-K8s-Cluster.md
-test-sap-tech-bytes.txt

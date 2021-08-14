@@ -20,7 +20,7 @@ code .
   
 ```bash
 node ➜ /workspaces/vsc-sap-hana-mta-dev-env-node14x/cap-kyma-app (main ✗)
-docker build -t cpapp . 
+$ docker build -t cpapp . 
     --> Image: cpapp:latest (030cbbeca7fb)   
 ```
 
@@ -32,7 +32,7 @@ docker build -t cpapp .
 
 ```bash
 node ➜ /workspaces/vsc-sap-hana-mta-dev-env-node14x/cap-kyma-app (main ✗)
-docker run -p 4004:4004 -t cpapp 
+$ docker run -p 4004:4004 -t cpapp 
     --> Image: cpapp:latest (030cbbeca7fb)   
 ```
 
@@ -66,7 +66,7 @@ docker run -p 4004:4004 -t cpapp
   
 ```bash
 node ➜ /workspaces/vsc-sap-hana-mta-dev-env-node14x/cap-kyma-app (main ✗)
-env | grep KUBECONFIG
+$ env | grep KUBECONFIG
 KUBECONFIG=/usr/local/share/kube-devcontainer/kubeconfig.yml   
 ```
 
@@ -80,7 +80,7 @@ cf login -a https://api.cf.eu10.hana.ondemand.com -u email -p psw --skip-ssl-val
 
 ```bash
 node ➜ /workspaces/vsc-sap-hana-mta-dev-env-node14x/cap-kyma-app (main ✗)
-kubectl get pods
+$ kubectl get pods
 No resources found in default namespace.
 ```
 
@@ -88,7 +88,7 @@ No resources found in default namespace.
 
 ```bash
 node ➜ /workspaces/vsc-sap-hana-mta-dev-env-node14x/cap-kyma-app (main ✗)
-kubectl get namespaces
+$ kubectl get namespaces
 NAME               STATUS   AGE
 compass-system     Active   8d
 default            Active   8d
@@ -100,21 +100,21 @@ default            Active   8d
 
 ```bash
 node ➜ /workspaces/vsc-sap-hana-mta-dev-env-node14x/cap-kyma-app (main ✗)
-helm repo add stable https://charts.helm.sh/stable
+$ helm repo add stable https://charts.helm.sh/stable
 ```
 
 ### 2. Install the Helm Chart for a docker registry
 
 ```bash
 node ➜ /workspaces/vsc-sap-hana-mta-dev-env-node14x/cap-kyma-app (main ✗)
-helm install docker-registry stable/docker-registry
+$ helm install docker-registry stable/docker-registry
 ```
 
 ### 3. You need to make the docker registry available on the public internet. The details to this step are explained later. Run the following commands
 
 ```bash
 node ➜ /workspaces/vsc-sap-hana-mta-dev-env-node14x/cap-kyma-app (main ✗) 
-kubectl apply -f - <<EOF
+$ kubectl apply -f - <<EOF
 apiVersion: gateway.kyma-project.io/v1alpha1
 kind: APIRule
 metadata:
@@ -140,7 +140,7 @@ EOF
 
 ```bash
 node ➜ /workspaces/vsc-sap-hana-mta-dev-env-node14x/cap-kyma-app (main ✗)
-kubectl port-forward deployment/docker-registry 5000:5000 &
+$ kubectl port-forward deployment/docker-registry 5000:5000 &
 [1] 6219
 
 node ➜ /workspaces/vsc-sap-hana-mta-dev-env-node14x/cap-kyma-app (main ✗) 
@@ -152,7 +152,7 @@ Forwarding from 127.0.0.1:5000 -> 5000
 
 ```bash
 node ➜ /workspaces/vsc-sap-hana-mta-dev-env-node14x/cap-kyma-app (main ✗)
-docker push 0.0.0.0:5000/cpapp
+$ docker push 0.0.0.0:5000/cpapp
 The push refers to repository [0.0.0.0:5000/cpapp]
 Get http://0.0.0.0:5000/v2/: dial tcp 0.0.0.0:5000: connect: connection refused
 ```
