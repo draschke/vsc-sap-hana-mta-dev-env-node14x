@@ -84,7 +84,7 @@
   
 
 ### Nice blog "SAP CAP VS Code dev container" written by @htammen
-ap.c
+
 - [Develop SAP CAP apps inside a VS Code Docker Container](https://blogs.som/2020/02/20/develop-sap-cap-apps-inside-a-vs-code-docker-container/)
 
 ### HANA CLI by @jung-thomas
