@@ -73,7 +73,7 @@
 - typescript
 - [docker](https://docs.docker.com/get-docker/)
 
-## Tutorials
+### My tutorials with VS Code
 
 To check out the tutorials, visit [SAP App Development with VS Code](https://draschke.github.io/my-SAP-exercises-with-VSCode/).
 
