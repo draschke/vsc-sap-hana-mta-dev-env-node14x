@@ -75,13 +75,14 @@
 
 ## Tutorials
 
+To check out the tutorials, visit [SAP App Development with VS Code](https://draschke.github.io/my-SAP-exercises-with-VSCode/).
+
 ### Microsoft - VS Code Dev Container
 
 - [Remote development in Containers](https://code.visualstudio.com/docs/remote/containers-tutorial)
 - [Developing inside Container](https://code.visualstudio.com/docs/remote/containers)
 - [Docker Hub](https://hub.docker.com/_/microsoft-vscode-devcontainers)
-- [Microsoft Dev Container on Github](https://github.com/microsoft/vscode-dev-containers) 
-  
+- [Microsoft Dev Container on Github](https://github.com/microsoft/vscode-dev-containers)  
 
 ### Nice blog "SAP CAP VS Code dev container" written by @htammen
 
