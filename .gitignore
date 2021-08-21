@@ -13,7 +13,9 @@ testing.txt
 test.txt
 test-cap-kyma.txt
 test-sap-tech-bytes.txt
-
+default-env*
+dr-cf-build-sap-overview-page/*
+build-sap-overview-page/*
 # node
 # ====
 https://github.com/github/gitignore/blob/master/Node.gitignore
@@ -137,3 +139,4 @@ dist
 .pnp.*
 issues
 
+dr-cf-build-sap-overview-page/test-cf.txt
