@@ -37,6 +37,7 @@
     "grapecity.gc-excelviewer",
     "gruntfuggly.todo-tree",
     "hbenl.vscode-test-explorer",
+    "hbenl.vscode-mocha-test-adapter",
     "hookyqr.beautify",
     "humao.rest-client",
     "ipedrazas.kubernetes-snippets",

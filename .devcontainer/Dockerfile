@@ -23,10 +23,10 @@ ENV npm config set registry https://registry.npmjs.org/
 # # # Prepare for apt-based install of Cloud Foundry CLI by adding Cloud Foundry Foundation public key & package repository
 # # # (see https://docs.cloudfoundry.org/cf-cli/install-go-cli.html#pkg-linux).
 RUN wget -q -O - https://packages.cloudfoundry.org/debian/cli.cloudfoundry.org.key | sudo apt-key add - ; \
-    echo "deb https://packages.cloudfoundry.org/debian stable main" | sudo tee /etc/apt/sources.list.d/cloudfoundry-cli.list
-
-# Install an additional version of node using nvm
-# RUN su node -c "source /usr/local/share/nvm/nvm.sh && nvm install ${EXTRA_NODE_VERSION}"
+    echo "deb https://packages.cloudfoundry.org/debian stable main" | sudo tee /etc/apt/sources.list.d/cloudfoundry-cli.list \
+    && sudo apt-get -y update \
+    # To install cf CLI v6, run
+    && sudo apt-get -y install cf-cli
 
 # # Alter node user as needed, install tslint, typescript. eslint is installed by javascript image
 RUN if [ "$USER_GID" != "1000" ] || [ "$USER_UID" != "1000" ]; then \
@@ -41,7 +41,7 @@ RUN if [ "$USER_GID" != "1000" ] || [ "$USER_UID" != "1000" ]; then \
     # Install global node modules for SAP CAP and frontend development.
     && npm config set registry https://registry.npmjs.org/ \
     && sudo -u ${USERNAME} npm i @sap/cds-dk \
-    -g mta \
+    -g mta \ 
     -g mbt \
     -g yo \
     -g @sap/generator-base-mta-module \
@@ -114,3 +114,14 @@ RUN apt-get update \
 # Set alias for hana-cli -->doesn't work
 # RUN echo -e '#!/bin/bash\n"hana-cli"' > /usr/bin/hc && \
 #     chmod +x /usr/bin/hc
+
+
+# List all Cloud Foundry CLI plugins to see whether the installation worked.
+# cf repo-plugins | grep multiapps
+# cf plugins
+RUN sudo -u ${USERNAME} cf add-plugin-repo CF-Community https://plugins.cloudfoundry.org \
+    && sudo -u ${USERNAME} cf install-plugin blue-green-deploy -f -r CF-Community \
+    # && sudo -u ${USERNAME} cf install-plugin -f -r CF-Community multiapps \
+    && sudo -u ${USERNAME} cf install-plugin multiapps -f -r CF-Community \
+    && sudo -u ${USERNAME} cf install-plugin -f https://github.com/cloudfoundry-incubator/multiapps-cli-plugin/releases/latest/download/multiapps-plugin.linux64
+
