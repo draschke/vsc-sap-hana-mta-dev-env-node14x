@@ -51,6 +51,7 @@ RUN if [ "$USER_GID" != "1000" ] || [ "$USER_UID" != "1000" ]; then \
     @sap/generator-cap-project \
     @sap/generator-fiori \
     @sap/generator-hdb-project \
+    @sap/hana-client \
     hana-cli 
 
 # # # Install kubectl (K8s)
@@ -108,3 +109,7 @@ RUN apt-get update \
     && rm -rf /var/lib/apt/lists/* \
     && mkdir --parents ${XSCLI} \
     && chown --recursive ${USERNAME}:${USERNAME} ${XSCLI}
+
+# Set alias for hana-cli
+RUN echo -e '#!/bin/bash\nhana-cli' > /usr/bin/hc && \
+    chmod +x /usr/bin/hc
