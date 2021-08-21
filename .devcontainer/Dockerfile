@@ -42,6 +42,7 @@ RUN if [ "$USER_GID" != "1000" ] || [ "$USER_UID" != "1000" ]; then \
     && npm config set registry https://registry.npmjs.org/ \
     && sudo -u ${USERNAME} npm i @sap/cds-dk \
     -g mta \
+    -g mbt \
     -g yo \
     -g @sap/generator-base-mta-module \
     -g @sap/generator-fiori \    
@@ -110,6 +111,6 @@ RUN apt-get update \
     && mkdir --parents ${XSCLI} \
     && chown --recursive ${USERNAME}:${USERNAME} ${XSCLI}
 
-# Set alias for hana-cli
-RUN echo -e '#!/bin/bash\nhana-cli' > /usr/bin/hc && \
-    chmod +x /usr/bin/hc
+# Set alias for hana-cli -->doesn't work
+# RUN echo -e '#!/bin/bash\n"hana-cli"' > /usr/bin/hc && \
+#     chmod +x /usr/bin/hc
