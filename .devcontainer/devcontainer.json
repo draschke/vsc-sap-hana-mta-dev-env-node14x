@@ -66,6 +66,8 @@
     "ms-vscode.cpptools",
     "ms-vscode.js-debug-nightly",
     "ms-vscode.test-adapter-converter",
+    // error 'github-issues.new' not found
+    // "ms-vscode.vscode-github-issue-notebooks",
     "msjsdiag.debugger-for-chrome",
     "mtxr.sqltools-driver-sqlite",
     "mtxr.sqltools",
