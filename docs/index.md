@@ -34,10 +34,10 @@ head:
       content: ./hiddensee_1200_627.jpg
   - - meta
     - name: "og:image:width"
-      content: "288"
+      content: "1200"
   - - meta
     - name: "og:image:height"
-      content: "216"       
+      content: "627"       
   - - meta
     - name: "twitter:title"
       content: "VS Code Dev Container for SAP HANA App development"
