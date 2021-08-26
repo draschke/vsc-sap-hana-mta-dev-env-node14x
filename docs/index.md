@@ -31,13 +31,16 @@ head:
       content: "article"
   - - meta
     - name: "og:image"
-      content: ./hiddensee_1200_627.jpg
+      content: "https://github.com/draschke/vsc-sap-hana-mta-dev-env-node14x/blob/main/docs/public/hiddensee_1200_627.jpg"
   - - meta
     - name: "og:image:width"
       content: "1200"
   - - meta
     - name: "og:image:height"
       content: "627"       
+  - - meta
+    - name: "twitter:card"
+      content: "https://github.com/draschke/vsc-sap-hana-mta-dev-env-node14x/blob/main/docs/public/hiddensee_1200_627.jpg"
   - - meta
     - name: "twitter:title"
       content: "VS Code Dev Container for SAP HANA App development"
@@ -46,7 +49,7 @@ head:
       content: "VS Code Dev Container for SAP HANA App development with XSA and CF for Node.js 14.x"
   - - meta
     - name: "twitter:image"
-      content: ./hiddensee_1200_627.jpg                         
+      content: "https://github.com/draschke/vsc-sap-hana-mta-dev-env-node14x/blob/main/docs/public/hiddensee_1200_627.jpg"                      
 heroImage: ./hiddensee_600_314.jpg
 heroAlt: VS Code Dev Container for SAP HANA App development
 heroText: VS Code Dev Container for SAP HANA App development
