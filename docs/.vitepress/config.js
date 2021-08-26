@@ -1,5 +1,6 @@
 module.exports = {
   lang: "en-US",
+  prefix: "og: https://ogp.me/ns#",
   title: "VS Code Dev Container for SAP HANA App development",
   description:
     "VS Code Dev Container for SAP HANA App development for Node.js 14.x",
