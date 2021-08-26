@@ -8,6 +8,10 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 - Nothing yet!
 
+## [1.0.5] - 2021-08-26
+
+- added meta tags
+
 ## [1.0.4] - 2021-08-26
 
 - moved image on index.md
