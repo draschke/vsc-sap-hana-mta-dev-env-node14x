@@ -48,6 +48,8 @@ head:
     - name: "twitter:image"
       content: "https://draschke.github.io/vsc-sap-hana-mta-dev-env-node14x/hiddensee_1200_627.jpg"                      
 heroText: VS Code Dev Container for SAP HANA App development
+heroAlt: VS Code Dev Container for SAP HANA App development
+heroImage: hiddensee_600_314.jpg
 ---
 
 # Kick off your SAP HANA App Dev Env for running Hana-Cli (XSA & CF) by leverage VS Code Dev Container. Use this [devcontainer](https://github.com/draschke/vscode-sap-hana-dev-env-for-running-hana-cli/tree/main/.devcontainer) for your projects if you want
