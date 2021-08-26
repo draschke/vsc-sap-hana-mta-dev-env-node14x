@@ -31,7 +31,7 @@ head:
       content: "article"
   - - meta
     - name: "og:image"
-      content: "https://draschke.github.io/vsc-sap-hana-mta-dev-env-node14x/path2.png"
+      content: ./hiddensee_1200_627.jpg
   - - meta
     - name: "og:image:width"
       content: "288"
@@ -43,8 +43,11 @@ head:
       content: "VS Code Dev Container for SAP HANA App development"
   - - meta
     - name: "twitter:description"
-      content: "VS Code Dev Container for SAP HANA App development with XSA and CF for Node.js 14.x"                       
-heroImage: /path2.png
+      content: "VS Code Dev Container for SAP HANA App development with XSA and CF for Node.js 14.x"
+  - - meta
+    - name: "twitter:image"
+      content: ./hiddensee_1200_627.jpg                         
+heroImage: ./hiddensee_600_314.jpg
 heroAlt: VS Code Dev Container for SAP HANA App development
 heroText: VS Code Dev Container for SAP HANA App development
 ---
