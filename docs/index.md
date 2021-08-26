@@ -4,13 +4,46 @@ home: true
 head:
   - - meta
     - name: description
-      content: VS Code Dev Container for SAP HANA App development with XSA and CF for Node.js 14.x
+      content: "VS Code Dev Container for SAP HANA App development with XSA and CF for Node.js 14.x"
   - - meta
     - name: keywords
       content: VS Code Dev Container, SAP HANA XSA, SAP HANA XSA Application Architect, SAP HANA BTP, SAPUI5, SAP Fiori, DevOps, Docker, Kubernetes, K8s, Kyma, JavaScript, Node.js, SQL, Linux, Cloudfoundry
   - - meta
-    - name: google-site-verification
-      content: fIcc0ZHuxODrjX67vMWV1Bm0JM-eGz04Fm4Fy6jAez0
+    - name: author
+      content: "Dirk Raschke"
+  - - meta
+    - name: "google-site-verification"
+      content: "fIcc0ZHuxODrjX67vMWV1Bm0JM-eGz04Fm4Fy6jAez0"
+  - - meta
+    - name: "og:title"
+      content: "VS Code Dev Container for SAP HANA App development"
+  - - meta
+    - name: "og:site_name"
+      content: "VS Code Dev Container for SAP HANA App development"
+  - - meta
+    - name: "og:url"
+      content: "https://draschke.github.io/vsc-sap-hana-mta-dev-env-node14x/"
+  - - meta
+    - name: "og:description"
+      content: "VS Code Dev Container for SAP HANA App development with XSA and CF for Node.js 14.x"
+  - - meta
+    - name: "og:type"
+      content: "article"
+  - - meta
+    - name: "og:image"
+      content: "https://draschke.github.io/vsc-sap-hana-mta-dev-env-node14x/path2.png"
+  - - meta
+    - name: "og:image:width"
+      content: "288"
+  - - meta
+    - name: "og:image:height"
+      content: "216"       
+  - - meta
+    - name: "twitter:title"
+      content: "VS Code Dev Container for SAP HANA App development"
+  - - meta
+    - name: "twitter:description"
+      content: "VS Code Dev Container for SAP HANA App development with XSA and CF for Node.js 14.x"                       
 heroImage: /path2.png
 heroAlt: VS Code Dev Container for SAP HANA App development
 heroText: VS Code Dev Container for SAP HANA App development
@@ -33,7 +66,7 @@ The approach of this project was to share the same required dev environment by u
 [Download the XS_CLIENT00P_xxx-70001320 for Linux from SAP Download Center](https://launchpad.support.sap.com/#/softwarecenter/template/products/related/_APP=00200682500000001943&_EVENT=DISPHIER&HEADER=Y&FUNCTIONBAR=N&EVENT=TREE&NE=NAVIGATE&ENR=73554900100900001301&V=MAINT/SAP%20HANA%20PLATFORM%20EDITION%202.0)  
 
   Drop the unzipped XS_CLIENT00P file on root  
-  
+
 ![XS Client](./config/images/node14.png)  
 Change the path in your .devcontainer\Dockerfile
 
@@ -58,7 +91,7 @@ Running project in WSL (Ubuntu)
 - For performance reason run the project in the Linux file system (~/home)
 - You'll find your Linux home directory on Windows here:
   
-```windows
+```bash
 \\wsl$
 \\wsl$\Ubuntu-20.04\home\
 ```
