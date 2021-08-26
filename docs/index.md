@@ -17,27 +17,35 @@ head:
   - - meta
     - name: "og:title"
       content: "VS Code Dev Container for SAP HANA App development"
+      prefix: "og: http://ogp.me/ns#"
   - - meta
     - name: "og:site_name"
       content: "VS Code Dev Container for SAP HANA App development"
+      prefix: "og: http://ogp.me/ns#"
   - - meta
     - name: "og:url"
       content: "https://draschke.github.io/vsc-sap-hana-mta-dev-env-node14x/"
+      prefix: "og: http://ogp.me/ns#"
   - - meta
     - name: "og:description"
       content: "VS Code Dev Container for SAP HANA App development with XSA and CF for Node.js 14.x"
+      prefix: "og: http://ogp.me/ns#"
   - - meta
     - name: "og:type"
       content: "article"
+      prefix: "og: http://ogp.me/ns#"
   - - meta
     - name: "og:image"
       content: "https://draschke.github.io/vsc-sap-hana-mta-dev-env-node14x/hiddensee_1200_627.jpg"
+      prefix: "og: http://ogp.me/ns#"
   - - meta
     - name: "og:image:width"
       content: "1200"
+      prefix: "og: http://ogp.me/ns#"
   - - meta
     - name: "og:image:height"
-      content: "627"       
+      content: "627"
+      prefix: "og: http://ogp.me/ns#"
   - - meta
     - name: "twitter:card"
       content: "https://draschke.github.io/vsc-sap-hana-mta-dev-env-node14x/hiddensee_1200_627.jpg"
