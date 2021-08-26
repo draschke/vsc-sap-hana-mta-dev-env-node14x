@@ -1,0 +1,44 @@
+{
+  "name": "vsc-sap-hana-mta-dev-env-node14x",
+  "version": "1.0.0",
+  "description": "VS Code Dev Container for SAP HANA App development for Node.js 14.x",
+  "main": "index.js",
+  "dependencies": {
+    "vitepress": "^0.16.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "docs:dev": "vitepress dev docs",
+    "docs:build": "vitepress build docs",
+    "docs:serve": "vitepress serve docs",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "deploy": "sh deploy.sh"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/draschke/vsc-sap-hana-mta-dev-env-node14x.git"
+  },
+  "keywords": [
+    "SAP",
+    "HANA",
+    "XSA",
+    "SAP HANA XSA Application",
+    "SAP HANA BTP",
+    "SAPUI5",
+    "SAP",
+    "Fiori",
+    "DevOps",
+    "Docker",
+    "Kubernetes",
+    "K8s",
+    "Kyma",
+    "JavaScript",
+    "Node.js"
+  ],
+  "author": "Dirk Raschke",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/draschke/vsc-sap-hana-mta-dev-env-node14x/issues"
+  },
+  "homepage": "https://github.com/draschke/vsc-sap-hana-mta-dev-env-node14x#readme"
+}
