@@ -8,9 +8,9 @@ head:
   - - meta
     - name: keywords
       content: VS Code Dev Container, SAP HANA XSA, SAP HANA XSA Application Architect, SAP HANA BTP, SAPUI5, SAP Fiori, DevOps, Docker, Kubernetes, K8s, Kyma, JavaScript, Node.js, SQL, Linux, Cloudfoundry
-  # - - meta
-  #   - name: google-site-verification
-  #     content: fIcc0ZHuxODrjX67vMWV1Bm0JM-eGz04Fm4Fy6jAez0
+  - - meta
+    - name: google-site-verification
+      content: fIcc0ZHuxODrjX67vMWV1Bm0JM-eGz04Fm4Fy6jAez0
 heroImage: /path2.png
 heroAlt: VS Code Dev Container for SAP HANA App development
 heroText: VS Code Dev Container for SAP HANA App development
