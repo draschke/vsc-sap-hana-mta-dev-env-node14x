@@ -15,37 +15,37 @@ head:
     - name: "google-site-verification"
       content: "fIcc0ZHuxODrjX67vMWV1Bm0JM-eGz04Fm4Fy6jAez0"
   - - meta
-    - name: "og:title"
+    - prefix: "og: http://ogp.me/ns#"
+      name: "og:title"
       content: "VS Code Dev Container for SAP HANA App development"
-      prefix: "og: http://ogp.me/ns#"
   - - meta
-    - name: "og:site_name"
+    - prefix: "og: http://ogp.me/ns#"
+      name: "og:site_name"
       content: "VS Code Dev Container for SAP HANA App development"
-      prefix: "og: http://ogp.me/ns#"
   - - meta
-    - name: "og:url"
+    - prefix: "og: http://ogp.me/ns#"
+      name: "og:url"
       content: "https://draschke.github.io/vsc-sap-hana-mta-dev-env-node14x/"
-      prefix: "og: http://ogp.me/ns#"
   - - meta
-    - name: "og:description"
+    - prefix: "og: http://ogp.me/ns#"
+      name: "og:description"
       content: "VS Code Dev Container for SAP HANA App development with XSA and CF for Node.js 14.x"
-      prefix: "og: http://ogp.me/ns#"
   - - meta
-    - name: "og:type"
+    - prefix: "og: http://ogp.me/ns#"
+      name: "og:type"
       content: "article"
-      prefix: "og: http://ogp.me/ns#"
   - - meta
-    - name: "og:image"
+    - prefix: "og: http://ogp.me/ns#"
+      name: "og:image"
       content: "https://draschke.github.io/vsc-sap-hana-mta-dev-env-node14x/hiddensee_1200_627.jpg"
-      prefix: "og: http://ogp.me/ns#"
   - - meta
-    - name: "og:image:width"
+    - prefix: "og: http://ogp.me/ns#"
+      name: "og:image:width"
       content: "1200"
-      prefix: "og: http://ogp.me/ns#"
   - - meta
-    - name: "og:image:height"
+    - prefix: "og: http://ogp.me/ns#"
+      name: "og:image:height"
       content: "627"
-      prefix: "og: http://ogp.me/ns#"
   - - meta
     - name: "twitter:card"
       content: "https://draschke.github.io/vsc-sap-hana-mta-dev-env-node14x/hiddensee_1200_627.jpg"
