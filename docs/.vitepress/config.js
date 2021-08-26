@@ -3,7 +3,7 @@ module.exports = {
   title: "VS Code Dev Container for SAP HANA App development",
   description:
     "VS Code Dev Container for SAP HANA App development for Node.js 14.x",
-  // base: "/vsc-sap-hana-mta-dev-env-node14x/",
+  base: "/vsc-sap-hana-mta-dev-env-node14x/",
   markdown: {
     lineNumbers: true,
   },
