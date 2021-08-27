@@ -7,7 +7,11 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 ## [Unreleased]
 
 - Nothing yet!
-- 
+  
+## [1.0.16] - 2021-08-27
+
+- changed the meta for og prefix
+  
 ## [1.0.15] - 2021-08-26
 
 - added prefix: "og: http://ogp.me/ns#"
@@ -40,6 +44,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 - Everything!
 
 [Unreleased]: https://github.com/draschke/vsc-sap-hana-mta-dev-env-node14x/compare/v1.0.9...HEAD
+[1.0.16]: https://github.com/draschke/vsc-sap-hana-mta-dev-env-node14x/compare/v1.0.15...v1.0.16
 [1.0.15]: https://github.com/draschke/vsc-sap-hana-mta-dev-env-node14x/compare/v1.0.14...v1.0.15
 [1.0.14]: https://github.com/draschke/vsc-sap-hana-mta-dev-env-node14x/compare/v1.0.6...v1.0.14
 [1.0.6]: https://github.com/draschke/vsc-sap-hana-mta-dev-env-node14x/compare/v1.0.5...v1.0.6
