@@ -1,12 +1,10 @@
 ---
 sidebarDepth: 3
 home: true                 
-heroText: VS Code Dev Container for SAP HANA App development
-heroAlt: VS Code Dev Container for SAP HANA App development
 heroImage: /hiddensee_600_314.jpg
 ---
 
-# Kick off your SAP HANA App Dev Env for running Hana-Cli (XSA & CF) by leverage VS Code Dev Container. Use this [devcontainer](https://github.com/draschke/vscode-sap-hana-dev-env-for-running-hana-cli/tree/main/.devcontainer) for your projects if you want
+# Kick off your SAP HANA application development environment (XSA & CF) by leverage this [VS Code Dev Container](https://github.com/draschke/vscode-sap-hana-dev-env-for-running-hana-cli/tree/main/.devcontainer)
 
 ## Motivation
 

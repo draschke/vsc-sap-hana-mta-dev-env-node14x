@@ -1,6 +1,6 @@
 let ogprefix = "og: http://ogp.me/ns#";
 let title = "VS Code Dev Container for SAP HANA App development";
-let description = "Kick off your SAP HANA App Dev Env for running Hana-Cli (XSA & CF) by leverage VS Code Dev Container. Use this [devcontainer](https://github.com/draschke/vscode-sap-hana-dev-env-for-running-hana-cli/tree/main/.devcontainer) for your projects if you want.";
+let description = "VS Code Dev Container for SAP HANA App development (XSA and CF)";
 let color = "#f42525";
 let author = "Dirk Raschke";
 let email = "draschke@googlemail.com";
@@ -13,7 +13,7 @@ module.exports = {
   base: "/vsc-sap-hana-mta-dev-env-node14x/",
   head: [
     // ["link", { rel: "icon", href: `/assets/favicon.ico` }],
-    // ["meta", { name: "theme-color", content: color }],
+    ["meta", { name: "theme-color", content: color }],
     ["meta", { prefix: ogprefix, property: "og:title", content: title }],
     ["meta", { prefix: ogprefix, property: "og:type", content: "article" }],
     ["meta", { prefix: ogprefix, property: "og:url", content: "https://draschke.github.io/vsc-sap-hana-mta-dev-env-node14x/" }],
