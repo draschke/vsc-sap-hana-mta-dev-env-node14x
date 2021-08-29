@@ -102,7 +102,7 @@ code --install-extension "christian-kohler.npm-intellisense"
 
 #### Nice blog "SAP CAP VS Code dev container" written by @htammen
 
-- [Develop SAP CAP apps inside a VS Code Docker Container](https://blogs.som/2020/02/20/develop-sap-cap-apps-inside-a-vs-code-docker-container/)
+- [Develop SAP CAP apps inside a VS Code Docker Container](https://blogs.sap.com/2020/02/20/develop-sap-cap-apps-inside-a-vs-code-docker-container/)
 
 #### HANA CLI by @jung-thomas
 
