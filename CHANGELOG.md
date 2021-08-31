@@ -8,6 +8,10 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 - Nothing yet!
   
+## [1.0.21] - 2021-08-31
+
+- changed title
+
 ## [1.0.17] - 2021-08-28
 
 - fixed broken link
@@ -48,6 +52,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 - Everything!
 
 [Unreleased]: https://github.com/draschke/vsc-sap-hana-mta-dev-env-node14x/compare/v1.0.9...HEAD
+[1.0.21]: https://github.com/draschke/vsc-sap-hana-mta-dev-env-node14x/compare/v1.0.17...v1.0.21
 [1.0.17]: https://github.com/draschke/vsc-sap-hana-mta-dev-env-node14x/compare/v1.0.16...v1.0.17
 [1.0.16]: https://github.com/draschke/vsc-sap-hana-mta-dev-env-node14x/compare/v1.0.15...v1.0.16
 [1.0.15]: https://github.com/draschke/vsc-sap-hana-mta-dev-env-node14x/compare/v1.0.14...v1.0.15

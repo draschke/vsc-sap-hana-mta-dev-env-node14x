@@ -1,4 +1,4 @@
-# Kick off your SAP HANA App Dev Env for running Hana-Cli (XSA & CF) by leverage VS Code Dev Container. Use this [devcontainer](https://github.com/draschke/vscode-sap-hana-dev-env-for-running-hana-cli/tree/main/.devcontainer) for your projects if you want
+# Kick off your SAP HANA App Dev Env for running Hana-Cli (XSA & CF) by leverage VS Code Dev Container. Use this [devcontainer](https://github.com/draschke/vsc-sap-hana-mta-dev-env-node14x/tree/master/.devcontainer) for your projects if you want
 
 ## Motivation
 
@@ -10,13 +10,15 @@ The approach of this project was to share the same required dev environment by u
 
 - [Install this VS Code Containers extension at first](https://code.visualstudio.com/docs/remote/containers-tutorial#_install-the-extension)
 
-- XS Client for SAP HANA XSA (Only required for connecting a XSA platform)
+### XS Client for SAP HANA XSA (Only required for connecting a XSA platform)
   
-[Download the XS_CLIENT00P_xxx-70001320 for Linux from SAP Download Center](https://launchpad.support.sap.com/#/softwarecenter/template/products/related/_APP=00200682500000001943&_EVENT=DISPHIER&HEADER=Y&FUNCTIONBAR=N&EVENT=TREE&NE=NAVIGATE&ENR=73554900100900001301&V=MAINT/SAP%20HANA%20PLATFORM%20EDITION%202.0)  
+  [Download the XS_CLIENT00P_xxx-70001320 for Linux from SAP Download Center](https://launchpad.support.sap.com/#/softwarecenter/template/products/related/_APP=00200682500000001943&_EVENT=DISPHIER&HEADER=Y&FUNCTIONBAR=N&EVENT=TREE&NE=NAVIGATE&ENR=73554900100900001301&V=MAINT/SAP%20HANA%20PLATFORM%20EDITION%202.0)  
 
-  Drop the unzipped XS_CLIENT00P file on root  
-![XS Client](docs/public/node14.png)  
-Change the path in your .devcontainer\Dockerfile
+    Drop the unzipped XS_CLIENT00P file on root  
+  ![XS Client](docs/public/node14.png)  
+  Change the path in your .devcontainer\Dockerfile
+
+#### Use WSL (Ubuntu)
 
 - (ENV XSCLI="/workspaces/cap-vscode-dev-container/XS_CLIENT00P_134-70001320)
 
@@ -31,6 +33,9 @@ $ chmod -R +x xs
 node ➜ /workspaces/vsc-sap-hana-mta-dev-env-node14x/XS_CLIENT00P_134-70001320/sapjvm_8_jre/ (docs ✗)
 $ chmod -R +x bin
 ```
+
+After that you can build the Dev Container by clicking the [Remote Status bar](https://code.visualstudio.com/docs/remote/containers-tutorial#_check-installation). 
+Only for the first time the building of the Dev Container takes about 10 minutes, but then in no time!
 
 ### Hints
 

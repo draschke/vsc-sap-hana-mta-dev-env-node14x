@@ -17,6 +17,9 @@ default-env*
 dr-cf-build-sap-overview-page
 build-sap-overview-page
 dr-cf-build-sap-overview-page-2
+cap-media-master
+dr-cap-media
+using-UI5-uploadset-with-CAP
 # node
 # ====
 https://github.com/github/gitignore/blob/master/Node.gitignore
