@@ -20,7 +20,7 @@ The approach of this project was to share the same required dev environment by u
 
 #### Use WSL (Ubuntu)
 
-- (ENV XSCLI="/workspaces/cap-vscode-dev-container/XS_CLIENT00P_134-70001320)
+- (ENV XSCLI="/workspaces/vsc-sap-hana-mta-dev-env-node14x/XS_CLIENT00P_134-70001320)
 
 Change the permission by running your WSL - Distro with the chmod command.
 
