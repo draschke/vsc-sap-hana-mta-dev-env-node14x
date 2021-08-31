@@ -1,6 +1,6 @@
 let ogprefix = "og: http://ogp.me/ns#";
 let title = "VS Code Dev Container for SAP HANA App development for Node.js 14x";
-let description = "VS Code Dev Container for SAP HANA App development (XSA and CF)";
+let description = "VS Code Dev Container for SAP HANA App development (XSA and CF) for Node.js 14x";
 let color = "#f42525";
 let author = "Dirk Raschke";
 let email = "draschke@googlemail.com";
