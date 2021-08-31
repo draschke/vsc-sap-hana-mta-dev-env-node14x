@@ -12,13 +12,13 @@ The approach of this project was to share the same required dev environment by u
 
 ### XS Client for SAP HANA XSA (Only required for connecting a XSA platform)
   
-  [Download the XS_CLIENT00P_xxx-70001320 for Linux from SAP Download Center](https://launchpad.support.sap.com/#/softwarecenter/template/products/related/_APP=00200682500000001943&_EVENT=DISPHIER&HEADER=Y&FUNCTIONBAR=N&EVENT=TREE&NE=NAVIGATE&ENR=73554900100900001301&V=MAINT/SAP%20HANA%20PLATFORM%20EDITION%202.0)  
-
-    Drop the unzipped XS_CLIENT00P file on root  
-  ![XS Client](docs/public/node14.png)  
-  Change the path in your .devcontainer\Dockerfile
+[Download the XS_CLIENT00P_xxx-70001320 for Linux from SAP Download Center](https://launchpad.support.sap.com/#/softwarecenter/template/products/related/_APP=00200682500000001943&_EVENT=DISPHIER&HEADER=Y&FUNCTIONBAR=N&EVENT=TREE&NE=NAVIGATE&ENR=73554900100900001301&V=MAINT/SAP%20HANA%20PLATFORM%20EDITION%202.0)  
 
 #### Use WSL (Ubuntu)
+
+Drop the unzipped XS_CLIENT00P file on root  
+![XS Client](docs/public/node14.png)  
+Change the path in your .devcontainer\Dockerfile
 
 - (ENV XSCLI="/workspaces/vsc-sap-hana-mta-dev-env-node14x/XS_CLIENT00P_134-70001320)
 
