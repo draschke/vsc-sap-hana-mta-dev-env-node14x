@@ -4,7 +4,7 @@ home: true
 heroImage: /hiddensee_600_314.jpg
 ---
 
-# Kick off your SAP HANA application development environment (XSA & CF) by leverage this [VS Code Dev Container](https://github.com/draschke/vscode-sap-hana-dev-env-for-running-hana-cli/tree/main/.devcontainer)
+# Kick off your SAP HANA application development environment (XSA & CF) by leverage this [VS Code Dev Container](https://github.com/draschke/vsc-sap-hana-mta-dev-env-node14x/tree/master/.devcontainer)
 
 ## Motivation
 
