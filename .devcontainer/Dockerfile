@@ -37,7 +37,8 @@ RUN if [ "$USER_GID" != "1000" ] || [ "$USER_UID" != "1000" ]; then \
     #
     # Install tslint, typescript. eslint is installed by javascript image
     && sudo -u ${USERNAME} npm install -g typescript \
-    # && sudo -u ${USERNAME} npm set @sap:registry=https://npm.sap.com -g\
+    # https://help.sap.com/viewer/17d50220bcd848aa854c9c182d65b699/Latest/en-US/17efa217f7f34a9eba53d7b209ca4280.html#loio5701672c35354d5b91759a911eaf1171
+    && sudo -u ${USERNAME} npm set @sap:registry=https://npm.sap.com -g \
     # Install global node modules for SAP CAP and frontend development.
     && npm config set registry https://registry.npmjs.org/ \
     && sudo -u ${USERNAME} npm i @sap/cds-dk \
