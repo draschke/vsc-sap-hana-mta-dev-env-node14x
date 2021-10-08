@@ -12,8 +12,8 @@ The approach of this project was to share the same required dev environment by u
 
 ## Prerequisites
 
-- [Install Docker Desktop on Windows](https://docs.docker.com/docker-for-windows/install/)
-
+- [Install Docker Desktop on Windows](https://docs.docker.com/docker-for-windows/install/) or [Docker on Windows (WSL) without Docker Desktop](https://dev.to/bowmanjd/install-docker-on-windows-wsl-without-docker-desktop-34m9)
+  - Because the terms of Docker Desktop have changed, I prefer to use [Docker on Windows (WSL) without Docker Desktop](https://dev.to/bowmanjd/install-docker-on-windows-wsl-without-docker-desktop-34m9).
 - [Install this VS Code Containers extension at first](https://code.visualstudio.com/docs/remote/containers-tutorial#_install-the-extension)
 
 ### XS Client for SAP HANA XSA (Only required for connecting a XSA platform)
