@@ -21,6 +21,8 @@ cap-media-master
 dr-cap-media
 using-UI5-uploadset-with-CAP
 com.myorg.myUI5App
+package-lock.json
+com.myorg.myUI5App
 # node
 # ====
 https://github.com/github/gitignore/blob/master/Node.gitignore

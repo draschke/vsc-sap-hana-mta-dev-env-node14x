@@ -2,9 +2,11 @@
 sidebarDepth: 3
 home: true                 
 heroImage: /hiddensee_600_314.jpg
+heroText: VS Code Dev Container for SAP HANA App development
+tagline:  for Node.js 14.x
 ---
 
-# Kick off your SAP HANA application development environment (XSA & CF) by leverage this [VS Code Dev Container](https://github.com/draschke/vsc-sap-hana-mta-dev-env-node14x/tree/master/.devcontainer)
+## Kick off your SAP HANA application development environment (XSA & CF) by leverage this [VS Code Dev Container](https://github.com/draschke/vsc-sap-hana-mta-dev-env-node14x/tree/master/.devcontainer)
 
 ## Motivation
 
