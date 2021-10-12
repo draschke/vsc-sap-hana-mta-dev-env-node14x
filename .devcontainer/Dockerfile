@@ -48,6 +48,7 @@ RUN if [ "$USER_GID" != "1000" ] || [ "$USER_UID" != "1000" ]; then \
     -g @sap/generator-base-mta-module \
     -g @sap/generator-fiori \    
     -g yo generator-easy-ui5 \
+    -g @ui5/cli \
     @sapui5/generator-sapui5-templates \
     @sap/generator-add-hdb-module \
     @sap/generator-cap-project \
