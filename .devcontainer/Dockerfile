@@ -28,6 +28,10 @@ RUN wget -q -O - https://packages.cloudfoundry.org/debian/cli.cloudfoundry.org.k
     # To install cf CLI v6, run
     && sudo apt-get -y install cf-cli
 
+# # keytar - Node module to manage system keychain (VSCode keytar)
+RUN sudo apt-get update -y \
+    && sudo apt-get -y install libsecret-1-dev
+
 # # Alter node user as needed, install tslint, typescript. eslint is installed by javascript image
 RUN if [ "$USER_GID" != "1000" ] || [ "$USER_UID" != "1000" ]; then \
     groupmod --gid $USER_GID $USERNAME \
@@ -41,6 +45,8 @@ RUN if [ "$USER_GID" != "1000" ] || [ "$USER_UID" != "1000" ]; then \
     && sudo -u ${USERNAME} npm set @sap:registry=https://npm.sap.com -g \
     # Install global node modules for SAP CAP and frontend development.
     && npm config set registry https://registry.npmjs.org/ \
+    # # keytar - Node module to manage system keychain (VSCode keytar)    
+    && sudo -s npm i keytar \
     && sudo -u ${USERNAME} npm i @sap/cds-dk \
     -g mta \ 
     -g mbt \
@@ -113,17 +119,10 @@ RUN apt-get update \
     && mkdir --parents ${XSCLI} \
     && chown --recursive ${USERNAME}:${USERNAME} ${XSCLI}
 
-# Set alias for hana-cli -->doesn't work
-# RUN echo -e '#!/bin/bash\n"hana-cli"' > /usr/bin/hc && \
-#     chmod +x /usr/bin/hc
-
-
 # List all Cloud Foundry CLI plugins to see whether the installation worked.
 # cf repo-plugins | grep multiapps
 # cf plugins
 RUN sudo -u ${USERNAME} cf add-plugin-repo CF-Community https://plugins.cloudfoundry.org \
     && sudo -u ${USERNAME} cf install-plugin blue-green-deploy -f -r CF-Community \
-    # && sudo -u ${USERNAME} cf install-plugin -f -r CF-Community multiapps \
     && sudo -u ${USERNAME} cf install-plugin multiapps -f -r CF-Community \
     && sudo -u ${USERNAME} cf install-plugin -f https://github.com/cloudfoundry-incubator/multiapps-cli-plugin/releases/latest/download/multiapps-plugin.linux64
-
