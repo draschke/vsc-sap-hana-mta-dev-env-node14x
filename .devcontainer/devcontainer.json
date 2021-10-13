@@ -93,7 +93,9 @@
     "visualstudioexptteam.vscodeintellicode",
     "vscode-icons-team.vscode-icons",
     "waderyan.gitblame",
-    "yzhang.markdown-all-in-one"
+    "yzhang.markdown-all-in-one",
+    "foxundermoon.shell-format",
+    "timonwong.shellcheck"
   ],
 
   // Ensure that Docker socket is mapped into the development container
