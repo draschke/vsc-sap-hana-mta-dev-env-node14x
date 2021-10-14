@@ -10,8 +10,13 @@
   ],
 
   // Set *default* container specific settings.json values on container create.
+  // The default user settings file is located here:
+  // ==================================================
+  // Windows %APPDATA%\Code\User\settings.json
   "settings": {
-    "workbench.colorTheme": "codeSTACKr Theme"
+    "workbench.colorTheme": "codeSTACKr Theme",
+    "workbench.iconTheme": "vscode-icons",
+    "shellformat.flag": "-i=2 -bn -ci -sr"
   },
 
   // // Add the IDs of extensions you want installed when the container is created.
