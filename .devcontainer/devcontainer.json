@@ -100,7 +100,9 @@
     "waderyan.gitblame",
     "yzhang.markdown-all-in-one",
     "foxundermoon.shell-format",
-    "timonwong.shellcheck"
+    "timonwong.shellcheck",
+    "saposs.vscode-ui5-language-assistant",
+    "iljapostnovs.ui5plugin"    
   ],
 
   // Ensure that Docker socket is mapped into the development container
