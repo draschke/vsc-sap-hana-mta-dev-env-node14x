@@ -102,7 +102,8 @@
     "foxundermoon.shell-format",
     "timonwong.shellcheck",
     "saposs.vscode-ui5-language-assistant",
-    "iljapostnovs.ui5plugin"    
+    "iljapostnovs.ui5plugin",
+    "github.vscode-pull-request-github"
   ],
 
   // Ensure that Docker socket is mapped into the development container
