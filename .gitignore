@@ -1,4 +1,3 @@
-
 # XS_CLIENT
 XS_CLIENT00P_134-70001320
 
@@ -21,9 +20,8 @@ cap-media-master
 dr-cap-media
 using-UI5-uploadset-with-CAP
 com.myorg.myUI5App
-package-lock.json
-com.myorg.myUI5App
-cpapp
+myUI5App*
+cpapp*
 # node
 # ====
 https://github.com/github/gitignore/blob/master/Node.gitignore
@@ -38,7 +36,7 @@ lerna-debug.log*
 
 # Diagnostic reports (https://nodejs.org/api/report.html)
 report.[0-9]*.[0-9]*.[0-9]*.[0-9]*.json
-
++9*()
 # Runtime data
 pids
 *.pid

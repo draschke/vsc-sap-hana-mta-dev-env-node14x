@@ -8,11 +8,11 @@ tagline:  for Node.js 14.x
 
 ## Kick off your SAP HANA application development environment (XSA & CF) by leverage this [VS Code Dev Container](https://github.com/draschke/vsc-sap-hana-mta-dev-env-node14x/tree/master/.devcontainer)
 
-## Motivation
+### Motivation
 
 The approach of this project was to share the same required dev environment by using the same VS Code Dev Containers to make the start for new team members more easy and faster.
 
-## Prerequisites
+### Prerequisites
 
 - [Install Docker Desktop on Windows](https://docs.docker.com/docker-for-windows/install/) or [Docker on Windows (WSL) without Docker Desktop](https://dev.to/bowmanjd/install-docker-on-windows-wsl-without-docker-desktop-34m9)
   - Because the terms of Docker Desktop have changed, I prefer to use [Docker on Windows (WSL) without Docker Desktop](https://dev.to/bowmanjd/install-docker-on-windows-wsl-without-docker-desktop-34m9).
@@ -24,8 +24,29 @@ The approach of this project was to share the same required dev environment by u
 
 #### Use WSL (Ubuntu)
 
-Drop the unzipped XS_CLIENT00P file on root  
-![XS Client](./config/images/node14.png)  
+Activate additional features at the end of the [Dockerfile](https://github.com/draschke/vsc-sap-hana-mta-dev-env-node14x/blob/main/.devcontainer/Dockerfile)
+
+To increase the startup time for this devcontainer, I have some features (docker, kubectl, etc.) outsourced in a separately bash script.
+If you need one of this features, you only need to comment or uncomment the relevant script.
+
+![Additional features](config/images/additional-features.png)
+
+Activate this additional VS Code extensions within [devcontainer](https://github.com/draschke/vsc-sap-hana-mta-dev-env-node14x/blob/main/.devcontainer/devcontainer.json)
+
+```json
+    "ms-vscode-remote.remote-containers",
+    "ms-vscode-remote.remote-ssh-edit",
+    "ms-vscode-remote.remote-ssh",
+    "ms-vscode-remote.remote-wsl",
+    "ms-vscode-remote.vscode-remote-extensionpack",
+```
+
+#### XS_Client
+
+Drop the unzipped XS_CLIENT00P file on root
+
+![XS Client](config/images/node14.png)
+
 Change the path in your .devcontainer\Dockerfile
 
 - (ENV XSCLI="/workspaces/vsc-sap-hana-mta-dev-env-node14x/XS_CLIENT00P_134-70001320)

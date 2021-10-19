@@ -3,12 +3,10 @@
 {
   "name": "VS Code Dev Container for SAP HANA App development (XSA and CF) for Node.js 14.x",
   "dockerFile": "Dockerfile",
-
   // \\wsl$\Ubuntu-20.04\home\user\.kube
   "mounts": [
     "source=${env:HOME}${env:USERPROFILE}/.kube,target=/usr/local/share/kube-devcontainer,type=bind"
   ],
-
   // Set *default* container specific settings.json values on container create.
   // The default user settings file is located here:
   // ==================================================
@@ -16,10 +14,9 @@
   "settings": {
     "workbench.colorTheme": "codeSTACKr Theme",
     "workbench.iconTheme": "vscode-icons",
+    "files.eol": "\n",
     "shellformat.flag": "-i=2 -bn -ci -sr"
   },
-
-  // // Add the IDs of extensions you want installed when the container is created.
   "extensions": [
     "alexcvzz.vscode-sqlite",
     "bengreenier.vscode-node-readme",
@@ -63,11 +60,13 @@
     "ms-python.python",
     "ms-python.vscode-pylance",
     "ms-toolsai.jupyter",
-    "ms-vscode-remote.remote-containers",
-    "ms-vscode-remote.remote-ssh-edit",
-    "ms-vscode-remote.remote-ssh",
-    "ms-vscode-remote.remote-wsl",
-    "ms-vscode-remote.vscode-remote-extensionpack",
+    // Activate additional features
+    // ===============================
+    // "ms-vscode-remote.remote-containers",
+    // "ms-vscode-remote.remote-ssh-edit",
+    // "ms-vscode-remote.remote-ssh",
+    // "ms-vscode-remote.remote-wsl",
+    // "ms-vscode-remote.vscode-remote-extensionpack",
     "ms-vscode.cpptools",
     "ms-vscode.js-debug-nightly",
     "ms-vscode.test-adapter-converter",
@@ -105,28 +104,22 @@
     "iljapostnovs.ui5plugin",
     "github.vscode-pull-request-github"
   ],
-
   // Ensure that Docker socket is mapped into the development container
-  "runArgs": ["-v", "/var/run/docker.sock:/var/run/docker.sock"],
-  // "runArgs": ["-v", "/var/run/docker.sock:/var/run/docker.sock", "-v", "/usr/local/share/kube-devcontainer://wsl$/Ubuntu-20.04/home/user/.kube/config"],
-
-  // https://stackoverflow.com/questions/58227845/how-can-i-use-an-env-file-to-pass-environment-variables-into-a-standalone-vscode
-  // file .env
-  // MY_URL=https://my.com/
-  // MY_SECRET=unicorns
-  //   "runArgs": [
-  //     "--env-file", "${localWorkspaceFolder}/.devcontainer/.env"
-  // ],
-
+  "runArgs": [
+    "-v",
+    "/var/run/docker.sock:/var/run/docker.sock"
+  ],
   // Use 'forwardPorts' to make a list of ports inside the container available locally.
-  "forwardPorts": [3000, 4000, 4004, 5000, 8000, 8080],
-
+  "forwardPorts": [
+    3000,
+    4000,
+    4004,
+    5000,
+    8000,
+    8080
+  ],
   // Use 'postCreateCommand' to run commands after the container is created.
-  // "postCreateCommand": "npm install && npm audit fix && npm install --prefix /workspaces/yourAppName/db && --prefix /workspaces/yourAppName/js && npm install --prefix /workspaces/yourAppName/web",
   // "postCreateCommand": "npm install && npm audit fix && npm install --prefix /workspaces/yourAppName/db && npm install --prefix /workspaces/yourAppName/js && npm start --prefix /workspaces/yourAppName/js && npm audit fix --prefix /workspaces/yourAppName/js && npm install --prefix /workspaces/yourAppName/web &&  npm start --prefix /workspaces/yourAppName/db",
-  // "postStartCommand": "bash -i -c 'nvm install --lts --latest-npm'",
-  // "postStartCommand": "nvm install --lts --latest-npm",
-
   // Uncomment to connect as a non-root user. See https://aka.ms/vscode-remote/containers/non-root.
   "remoteUser": "node"
 }

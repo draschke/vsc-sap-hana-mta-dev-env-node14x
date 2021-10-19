@@ -16,8 +16,29 @@ The approach of this project was to share the same required dev environment by u
 
 #### Use WSL (Ubuntu)
 
-Drop the unzipped XS_CLIENT00P file on root  
-![XS Client](docs/public/node14.png)  
+[Activate additional features Dockerfile](../../../.devcontainer/Dockerfile)
+
+To increase the startup time for this devcontainer, I have some features (docker, kubectl, etc.) outsourced in a separately bash script.
+If you need one of this features, you only need to comment/uncomment the relevant scripts for you.
+
+![Additional features](/docs/config/images/additional-features.png)
+
+[Activate additional VS Code Extensions](../../../.devcontainer/devcontainer.json)
+
+```json
+    "ms-vscode-remote.remote-containers",
+    "ms-vscode-remote.remote-ssh-edit",
+    "ms-vscode-remote.remote-ssh",
+    "ms-vscode-remote.remote-wsl",
+    "ms-vscode-remote.vscode-remote-extensionpack",
+```
+
+#### XS_Client
+
+Drop the unzipped XS_CLIENT00P file on root
+
+![XS Client](/docs/config/images/node14.png)
+
 Change the path in your .devcontainer\Dockerfile
 
 - (ENV XSCLI="/workspaces/vsc-sap-hana-mta-dev-env-node14x/XS_CLIENT00P_134-70001320)
@@ -34,7 +55,7 @@ node ➜ /workspaces/vsc-sap-hana-mta-dev-env-node14x/XS_CLIENT00P_134-70001320/
 $ chmod -R +x bin
 ```
 
-After that you can build the Dev Container by clicking the [Remote Status bar](https://code.visualstudio.com/docs/remote/containers-tutorial#_check-installation). 
+After that you can build the Dev Container by clicking the [Remote Status bar](https://code.visualstudio.com/docs/remote/containers-tutorial#_check-installation).
 Only for the first time the building of the Dev Container takes about 10 minutes, but then in no time!
 
 ### Hints

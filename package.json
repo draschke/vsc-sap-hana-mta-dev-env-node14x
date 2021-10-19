@@ -7,6 +7,9 @@
     "keytar": "^7.7.0",
     "vitepress": "^0.16.1"
   },
+  "server": {
+    "host": true
+  },
   "devDependencies": {},
   "scripts": {
     "docs:dev": "vitepress dev docs",
