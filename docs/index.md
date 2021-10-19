@@ -29,7 +29,7 @@ Activate additional features at the end of the [Dockerfile](https://github.com/d
 To increase the startup time for this devcontainer, I have some features (docker, kubectl, etc.) outsourced in a separately bash script.
 If you need one of this features, you only need to comment or uncomment the relevant script.
 
-![Additional features](config/images/additional-features.png)
+![Additional features](./config/images/additional-features.png)
 
 Activate this additional VS Code extensions within [devcontainer](https://github.com/draschke/vsc-sap-hana-mta-dev-env-node14x/blob/main/.devcontainer/devcontainer.json)
 
@@ -45,7 +45,7 @@ Activate this additional VS Code extensions within [devcontainer](https://github
 
 Drop the unzipped XS_CLIENT00P file on root
 
-![XS Client](config/images/node14.png)
+![XS Client](./config/images/node14.png)
 
 Change the path in your .devcontainer\Dockerfile
 
