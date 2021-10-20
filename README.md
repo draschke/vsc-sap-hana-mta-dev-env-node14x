@@ -10,16 +10,11 @@ The approach of this project was to share the same required dev environment by u
   - Because the terms of Docker Desktop have changed, I prefer to use [Docker on Windows (WSL) without Docker Desktop](https://dev.to/bowmanjd/install-docker-on-windows-wsl-without-docker-desktop-34m9).
 - [Install this VS Code Containers extension at first](https://code.visualstudio.com/docs/remote/containers-tutorial#_install-the-extension)
 
-### XS Client for SAP HANA XSA (Only required for connecting a XSA platform)
-  
-[Download the XS_CLIENT00P_xxx-70001320 for Linux from SAP Download Center](https://launchpad.support.sap.com/#/softwarecenter/template/products/related/_APP=00200682500000001943&_EVENT=DISPHIER&HEADER=Y&FUNCTIONBAR=N&EVENT=TREE&NE=NAVIGATE&ENR=73554900100900001301&V=MAINT/SAP%20HANA%20PLATFORM%20EDITION%202.0)  
-
-#### Use WSL (Ubuntu)
+#### Setting up this Dev Container - use WSL (Ubuntu)
 
 [Activate additional features Dockerfile](../../../.devcontainer/Dockerfile)
 
-To increase the startup time for this devcontainer, I have some features (docker, kubectl, etc.) outsourced in a separately bash script.
-If you need one of this features, you only need to comment/uncomment the relevant scripts for you.
+Some features (docker, kubectl, etc.) were outsourced in a separately bash script, to increase the startup time for this devcontainer. If you need one of this features, you only need to comment or uncomment the relevant script.
 
 ![Additional features](/docs/config/images/additional-features.png)
 
@@ -33,7 +28,9 @@ If you need one of this features, you only need to comment/uncomment the relevan
     "ms-vscode-remote.vscode-remote-extensionpack",
 ```
 
-#### XS_Client
+Add XS Client for SAP HANA XSA (Only required for connecting a XSA platform)
+  
+[Download the XS_CLIENT00P_xxx-70001320 for Linux from SAP Download Center](https://launchpad.support.sap.com/#/softwarecenter/template/products/related/_APP=00200682500000001943&_EVENT=DISPHIER&HEADER=Y&FUNCTIONBAR=N&EVENT=TREE&NE=NAVIGATE&ENR=73554900100900001301&V=MAINT/SAP%20HANA%20PLATFORM%20EDITION%202.0)
 
 Drop the unzipped XS_CLIENT00P file on root
 

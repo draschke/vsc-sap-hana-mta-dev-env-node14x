@@ -30,7 +30,7 @@ RUN wget -q -O - https://packages.cloudfoundry.org/debian/cli.cloudfoundry.org.k
     && sudo apt-get -y update \
     # To install cf CLI v6, run
     && sudo apt-get -y install cf-cli \
-# # keytar - Node module to manage system keychain (VSCode keytar)
+# Keytar - Node module to manage system keychain (VSCode keytar)
     && sudo apt-get update -y \
     && sudo apt-get -y install libsecret-1-dev \
 # Alter node user as needed, install tslint, typescript. eslint is installed by javascript image
@@ -39,14 +39,13 @@ RUN wget -q -O - https://packages.cloudfoundry.org/debian/cli.cloudfoundry.org.k
     && usermod --uid $USER_UID --gid $USER_GID $USERNAME \
     && chown -R $USER_UID:$USER_GID /home/$USERNAME; \
     fi \
-    #
     # Install tslint, typescript. eslint is installed by javascript image
     && sudo -u ${USERNAME} npm install -g typescript \
     # https://help.sap.com/viewer/17d50220bcd848aa854c9c182d65b699/Latest/en-US/17efa217f7f34a9eba53d7b209ca4280.html#loio5701672c35354d5b91759a911eaf1171
     && sudo -u ${USERNAME} npm set @sap:registry=https://npm.sap.com -g \
     # Install global node modules for SAP CAP and frontend development.
     && npm config set registry https://registry.npmjs.org/ \
-    # # keytar - Node module to manage system keychain (VSCode keytar)
+# Keytar - Node module to manage system keychain (VSCode keytar)
     && sudo -s npm i keytar \
     && sudo -u ${USERNAME} npm i @sap/cds-dk \
     -g mta \
@@ -63,7 +62,7 @@ RUN wget -q -O - https://packages.cloudfoundry.org/debian/cli.cloudfoundry.org.k
     @sap/generator-hdb-project \
     @sap/hana-client \
     hana-cli \
-# # # Install extra tools for CAP development & deployment.
+# Install extra tools for CAP development & deployment.
     && apt-get update && export DEBIAN_FRONTEND=noninteractive \
     && apt-get -y install --no-install-recommends apt-utils dialog 2>&1 \
     && apt-get -y install sqlite cf-cli \
