@@ -1,6 +1,6 @@
 {
   "name": "vsc-sap-hana-mta-dev-env-node14x",
-  "version": "1.0.30",
+  "version": "1.0.31",
   "description": "VS Code Dev Container for SAP HANA App development for Node.js 14.x",
   "main": "index.js",
   "dependencies": {
