@@ -52,6 +52,7 @@ RUN wget -q -O - https://packages.cloudfoundry.org/debian/cli.cloudfoundry.org.k
     -g mbt \
     -g yo \
     -g @sap/generator-base-mta-module \
+    -g @sap/ux-ui5-tooling \    
     -g @sap/generator-fiori \
     -g yo generator-easy-ui5 \
     -g @ui5/cli \
