@@ -35,6 +35,7 @@
     "fivepointseven.node-version",
     "github.copilot",
     "github.vscode-pull-request-github",
+    "github.remotehub",
     "eamodio.gitlens",
     "grapecity.gc-excelviewer",
     "gruntfuggly.todo-tree",
