@@ -12,10 +12,22 @@
   // ==================================================
   // Windows %APPDATA%\Code\User\settings.json
   "settings": {
-    "workbench.colorTheme": "codeSTACKr Theme",
+    "workbench.colorTheme": "Night Owl",
     "workbench.iconTheme": "vscode-icons",
     "files.eol": "\n",
-    "shellformat.flag": "-i=2 -bn -ci -sr"
+    "shellformat.flag": "-i=2 -bn -ci -sr",
+    "editor.formatOnSave": true,
+    "editor.formatOnPaste": true,
+    "editor.formatOnType": true,
+    "[html]": {
+      "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[sql]": {
+      "editor.defaultFormatter": "mtxr.sqltools"
+    },
+    "[gitignore]": {
+      "editor.defaultFormatter": "codezombiech.gitignore"
+    }
   },
   "extensions": [
     "alexcvzz.vscode-sqlite",
