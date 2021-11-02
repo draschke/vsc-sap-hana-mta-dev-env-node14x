@@ -61,6 +61,7 @@ RUN wget -q -O - https://packages.cloudfoundry.org/debian/cli.cloudfoundry.org.k
     @sap/generator-cap-project \
     @sap/generator-fiori \
     @sap/generator-hdb-project \
+    @sap/ux-ui5-fe-mockserver-middleware \
     @sap/hana-client \
     hana-cli \
 # Install extra tools for CAP development & deployment.
