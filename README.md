@@ -15,6 +15,11 @@ The approach of this project was to share the same required dev environment by u
 [Activate additional features Dockerfile](../../../.devcontainer/Dockerfile)
 
 Some features (docker, kubectl, etc.) were outsourced in a separately bash script, to increase the startup time for this devcontainer. If you need one of this features, you only need to comment or uncomment the relevant script.
+Change the permission with the chmod command.
+```bash
+node ➜ /workspaces/.../.devcontainer (main ✗) $  (docs ✗)
+$ chmod -R +x
+```
 
 ![Additional features](/docs/config/images/additional-features.png)
 

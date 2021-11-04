@@ -80,7 +80,7 @@ RUN wget -q -O - https://packages.cloudfoundry.org/debian/cli.cloudfoundry.org.k
     && sudo -u ${USERNAME} cf add-plugin-repo CF-Community https://plugins.cloudfoundry.org \
     && sudo -u ${USERNAME} cf install-plugin blue-green-deploy -f -r CF-Community \
     && sudo -u ${USERNAME} cf install-plugin multiapps -f -r CF-Community \
-    && sudo -u ${USERNAME} cf install-plugin -f https://github.com/cloudfoundry-incubator/multiapps-cli-plugin/releases/latest/download/multiapps-plugin.linux64 \
+    && sudo -u ${USERNAME} cf install-plugin -f https://github.com/cloudfoundry-incubator/multiapps-cli-plugin/releases/latest/download/multiapps-plugin.linux64
 # =========================
 # ADD ADDITIONAL FEATURES
 # =========================
@@ -94,3 +94,6 @@ RUN wget -q -O - https://packages.cloudfoundry.org/debian/cli.cloudfoundry.org.k
 # && ./4-helm
 # RUN chmod +x 5-docker \
 # && ./5-docker
+# dependencies local with pip /.devcontainer/python/requirements.txt Python
+# RUN chmod +x 6-python \
+# && ./6-python

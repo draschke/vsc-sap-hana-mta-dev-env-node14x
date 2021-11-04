@@ -7,12 +7,9 @@
   "mounts": [
     "source=${env:HOME}${env:USERPROFILE}/.kube,target=/usr/local/share/kube-devcontainer,type=bind"
   ],
-  // Set *default* container specific settings.json values on container create.
-  // The default user settings file is located here:
-  // ==================================================
-  // Windows %APPDATA%\Code\User\settings.json
   "settings": {
-    "workbench.colorTheme": "Night Owl",
+    "workbench.colorTheme": "codeSTACKr Theme",
+    // "workbench.colorTheme": "Night Owl",
     "workbench.iconTheme": "vscode-icons",
     "files.eol": "\n",
     "shellformat.flag": "-i=2 -bn -ci -sr",
@@ -48,7 +45,6 @@
     "esbenp.prettier-vscode",
     "fivepointseven.node-version",
     "foxundermoon.shell-format",
-    "github.copilot",
     "github.remotehub",
     "github.vscode-pull-request-github",
     "grapecity.gc-excelviewer",
@@ -117,7 +113,10 @@
     // ======
     // "ms-python.python",
     // "ms-python.vscode-pylance",
-    // "ms-toolsai.jupyter",
+    // "ms-toolsai.jupyter"
+    // GitHub Copilot is an AI pair programmer
+    // ==========================================
+    // "github.copilot"
   ],
   // Ensure that Docker socket is mapped into the development container
   "runArgs": [
