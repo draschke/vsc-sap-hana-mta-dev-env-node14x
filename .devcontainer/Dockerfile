@@ -30,10 +30,10 @@ RUN wget -q -O - https://packages.cloudfoundry.org/debian/cli.cloudfoundry.org.k
     && sudo apt-get -y update \
     # To install cf CLI v6, run
     && sudo apt-get -y install cf-cli \
-# Keytar - Node module to manage system keychain (VSCode keytar)
+    # Keytar - Node module to manage system keychain (VSCode keytar)
     && sudo apt-get update -y \
     && sudo apt-get -y install libsecret-1-dev \
-# Alter node user as needed, install tslint, typescript. eslint is installed by javascript image
+    # Alter node user as needed, install tslint, typescript. eslint is installed by javascript image
     && if [ "$USER_GID" != "1000" ] || [ "$USER_UID" != "1000" ]; then \
     groupmod --gid $USER_GID $USERNAME \
     && usermod --uid $USER_UID --gid $USER_GID $USERNAME \
@@ -45,7 +45,7 @@ RUN wget -q -O - https://packages.cloudfoundry.org/debian/cli.cloudfoundry.org.k
     && sudo -u ${USERNAME} npm set @sap:registry=https://npm.sap.com -g \
     # Install global node modules for SAP CAP and frontend development.
     && npm config set registry https://registry.npmjs.org/ \
-# Keytar - Node module to manage system keychain (VSCode keytar)
+    # Keytar - Node module to manage system keychain (VSCode keytar)
     && sudo -s npm i keytar \
     && sudo -u ${USERNAME} npm i @sap/cds-dk \
     -g mta \
@@ -64,19 +64,19 @@ RUN wget -q -O - https://packages.cloudfoundry.org/debian/cli.cloudfoundry.org.k
     @sap/ux-ui5-fe-mockserver-middleware \
     @sap/hana-client \
     hana-cli \
-# Install extra tools for CAP development & deployment.
+    # Install extra tools for CAP development & deployment.
     && apt-get update && export DEBIAN_FRONTEND=noninteractive \
     && apt-get -y install --no-install-recommends apt-utils dialog 2>&1 \
     && apt-get -y install sqlite cf-cli \
-# XS CLI for running against HANA XSA
+    # XS CLI for running against HANA XSA
     && apt-get update \
     && apt-get install --yes --no-install-recommends procps unzip \
     && rm -rf /var/lib/apt/lists/* \
     && mkdir --parents ${XSCLI} \
     && chown --recursive ${USERNAME}:${USERNAME} ${XSCLI} \
-# List all Cloud Foundry CLI plugins to see whether the installation worked.
-# cf repo-plugins | grep multiapps
-# cf plugins
+    # List all Cloud Foundry CLI plugins to see whether the installation worked.
+    # cf repo-plugins | grep multiapps
+    # cf plugins
     && sudo -u ${USERNAME} cf add-plugin-repo CF-Community https://plugins.cloudfoundry.org \
     && sudo -u ${USERNAME} cf install-plugin blue-green-deploy -f -r CF-Community \
     && sudo -u ${USERNAME} cf install-plugin multiapps -f -r CF-Community \
@@ -84,16 +84,15 @@ RUN wget -q -O - https://packages.cloudfoundry.org/debian/cli.cloudfoundry.org.k
 # =========================
 # ADD ADDITIONAL FEATURES
 # =========================
-# RUN chmod +x 1-kubectl \
+# RUN chmod +x -R scripts/1-kubectl \
 # && ./1-kubectl
-# RUN chmod +x 2-kube-devcontainer \
+# RUN chmod +x -R scripts/2-kube-devcontainer \
 # && ./2-kube-devcontainer
-# RUN chmod +x 3-minikube \
+# RUN chmod +x -R scripts/3-minikube \
 # && ./3-minikube
-# RUN chmod +x 4-helm \
+# RUN chmod +x -R scripts/4-helm \
 # && ./4-helm
-# RUN chmod +x 5-docker \
+# RUN chmod +x -R scripts/5-docker \
 # && ./5-docker
-# dependencies local with pip /.devcontainer/python/requirements.txt Python
-# RUN chmod +x 6-python \
-# && ./6-python
+# RUN chmod +x -R scripts \
+#     && ./scripts/6-python

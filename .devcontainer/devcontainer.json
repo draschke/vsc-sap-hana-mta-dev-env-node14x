@@ -39,8 +39,7 @@
     "dbaeumer.vscode-eslint",
     "donjayamanne.githistory",
     "dotjoshjohnson.xml",
-    "eamodio.gitlens",
-    "eamodio.gitlens",
+    "eamodio.gitlens-insiders",
     "eg2.vscode-npm-script",
     "esbenp.prettier-vscode",
     "fivepointseven.node-version",
@@ -65,7 +64,6 @@
     "mindaro-dev.file-downloader",
     "mindaro.mindaro",
     "ms-ceintl.vscode-language-pack-de",
-    "ms-mssql.mssql",
     "ms-vscode.cpptools",
     "ms-vscode.js-debug-nightly",
     "ms-vscode.test-adapter-converter",
@@ -98,7 +96,9 @@
     "vscode-icons-team.vscode-icons",
     "vsls-contrib.codetour",
     "waderyan.gitblame",
-    "yzhang.markdown-all-in-one"
+    "yzhang.markdown-all-in-one",
+    "ms-mssql.mssql",
+    "ms-azuretools.vscode-docker",
     // Activate additional features
     // ===============================
     // "ms-vscode-remote.remote-containers",
@@ -107,8 +107,7 @@
     // "ms-vscode-remote.remote-wsl",
     // "ms-vscode-remote.vscode-remote-extensionpack",
     // "ms-kubernetes-tools.vscode-kubernetes-tools",
-    // "ipedrazas.kubernetes-snippets",    
-    // "ms-azuretools.vscode-docker",
+    // "ipedrazas.kubernetes-snippets",
     // Python
     // ======
     // "ms-python.python",
