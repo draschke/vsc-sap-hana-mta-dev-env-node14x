@@ -93,6 +93,6 @@ RUN wget -q -O - https://packages.cloudfoundry.org/debian/cli.cloudfoundry.org.k
 # RUN chmod +x -R scripts \
 #     && ./scripts/4-helm
 # RUN chmod +x -R scripts \
-#     && ./5-docker
+#     && ./scripts/5-docker
 # RUN chmod +x -R scripts \
 #     && ./scripts/6-python
