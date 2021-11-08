@@ -8,6 +8,10 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 - Nothing yet!  
 
+## [1.0.31] - 2021-11-08
+
+- add additional feature python and libs in [requirements.txt](.devcontainer/python/requirements.txt)
+
 ## [1.0.30] - 2021-10-19
 
 - dockerfile optimized  
@@ -57,7 +61,8 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 - Everything!
 
-[Unreleased]: https://github.com/draschke/vsc-sap-hana-mta-dev-env-node14x/compare/v1.0.30...HEAD
+[Unreleased]: https://github.com/draschke/vsc-sap-hana-mta-dev-env-node14x/compare/v1.0.32...HEAD
+[1.0.30]: https://github.com/draschke/vsc-sap-hana-mta-dev-env-node14x/compare/v1.0.30...v1.0.31
 [1.0.30]: https://github.com/draschke/vsc-sap-hana-mta-dev-env-node14x/compare/v1.0.21...v1.0.30
 [1.0.21]: https://github.com/draschke/vsc-sap-hana-mta-dev-env-node14x/compare/v1.0.17...v1.0.21
 [1.0.17]: https://github.com/draschke/vsc-sap-hana-mta-dev-env-node14x/compare/v1.0.16...v1.0.17
