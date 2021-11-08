@@ -15,6 +15,10 @@ Step 4. Setting the version (increase the version automatically)
 node ➜ /workspaces/my-SAP-exercises-with-VSCode (master) 
 $ npm version patch
 v1.0.4
+$ npm version minor
+v1.1.0
+$ npm version major
+v2.0.0
 
   Check the packages 
   ===================
@@ -24,50 +28,9 @@ v1.0.4
   Check the tags 
   ===================
   $ git tag
-  v1.0.0ä.c01
+  v1.0.1
   v1.0.2
-
-
 
 Step 5. Push to master 
 =====================
 git push --follow-tags
-
-
-
-Issue: npm ERR! Git working directory not clean.
-======
-https://github.com/npm/npm/issues/6879
-1. Solution
-======
-npm version  --no-git-tag-version
-npm version --force --no-git-tag-version
-2. Solution
-======
-git add . && git commit
-
-
-Issue: Beim manuellen Starten der Action stand wieder "refs/heads/master" als release
-======
-Solution zum Entfernen: 
-======
-remote
-$ git push origin :refs/tags/refs/heads/master
-local
-$ git tag -d refs/heads/master
-
-Issue: 
-======
-error: src refspec refs/heads/main matches more than one.
-node ➜ /workspaces/vsc-sap-hana-mta-dev-env-node14x (main) $ git tag
-refs/heads/main
-v1.0.1
-
-Solution:
-======
-delete the local tag
-git tag -d refs/heads/main
-
-node ➜ /workspaces/vsc-sap-hana-mta-dev-env-node14x (main) $ git tag
-v1.0.1
-
