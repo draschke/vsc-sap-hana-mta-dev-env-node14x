@@ -10,10 +10,11 @@ The approach of this project was to share the same required dev environment by u
   - Because the terms of Docker Desktop have changed, I prefer to use [Docker on Windows (WSL) without Docker Desktop](https://dev.to/bowmanjd/install-docker-on-windows-wsl-without-docker-desktop-34m9).
 - [Install this VS Code Containers extension at first](https://code.visualstudio.com/docs/remote/containers-tutorial#_install-the-extension)
 
-#### Setting up this Dev Container - use WSL (Ubuntu)
-
+## Setting up this Dev Container - use WSL (Ubuntu)
 
 Some features (docker, kubectl, etc.) were outsourced in a separately bash script, to increase the startup time for this devcontainer. If you need one of this features, you only need to comment or uncomment the relevant script.
+
+### 1. Optional activate additional features at the end of the [Dockerfile](../../../.devcontainer/Dockerfile)
 
 Change the permission to executable with the chmod command.
 
@@ -21,8 +22,6 @@ Change the permission to executable with the chmod command.
 node ➜ .../.devcontainer (main ✗) $  (docs ✗)
 $ chmod -R +x
 ```
-
-Optional activate additional features at the end of the [Dockerfile](../../../.devcontainer/Dockerfile)
 
 ![Additional features](/docs/config/images/additional-features.png)
 
@@ -37,7 +36,7 @@ Optional activate this additional VS Code extensions within
     "ms-vscode-remote.vscode-remote-extensionpack",
 ```
 
-Add XS Client for SAP HANA XSA (Only required for connecting a XSA platform)
+### 2. Optional XS Client for SAP HANA XSA (Only required for connecting a XSA platform)
   
 [Download the XS_CLIENT00P_xxx-70001320 for Linux from SAP Download Center](https://launchpad.support.sap.com/#/softwarecenter/template/products/related/_APP=00200682500000001943&_EVENT=DISPHIER&HEADER=Y&FUNCTIONBAR=N&EVENT=TREE&NE=NAVIGATE&ENR=73554900100900001301&V=MAINT/SAP%20HANA%20PLATFORM%20EDITION%202.0)
 
