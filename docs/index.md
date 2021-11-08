@@ -22,11 +22,18 @@ The approach of this project was to share the same required dev environment by u
 
 Some features (docker, kubectl, etc.) were outsourced in a separately bash script, to increase the startup time for this devcontainer. If you need one of this features, you only need to comment or uncomment the relevant script.
 
-Activate additional features at the end of the [Dockerfile](https://github.com/draschke/vsc-sap-hana-mta-dev-env-node14x/blob/main/.devcontainer/Dockerfile).
+Change the permission to executable with the chmod command.
+
+```bash
+node ➜ .../.devcontainer (main ✗) $  (docs ✗)
+$ chmod -R +x
+```
+
+Optional activate additional features at the end of the [Dockerfile](https://github.com/draschke/vsc-sap-hana-mta-dev-env-node14x/blob/main/.devcontainer/Dockerfile).
 
 ![Additional features](./config/images/additional-features.png)
 
-Activate this additional VS Code extensions within [devcontainer](https://github.com/draschke/vsc-sap-hana-mta-dev-env-node14x/blob/main/.devcontainer/devcontainer.json)
+Optional activate this additional VS Code extensions within [devcontainer](https://github.com/draschke/vsc-sap-hana-mta-dev-env-node14x/blob/main/.devcontainer/devcontainer.json)
 
 ```json
     "ms-vscode-remote.remote-containers",
@@ -36,7 +43,7 @@ Activate this additional VS Code extensions within [devcontainer](https://github
     "ms-vscode-remote.vscode-remote-extensionpack",
 ```
 
-Add XS Client for SAP HANA XSA (Only required for connecting a XSA platform)
+Optional add XS Client for SAP HANA XSA (Only required for connecting a XSA platform)
 
 [Download the XS_CLIENT00P_xxx-70001320 for Linux from SAP Download Center](https://launchpad.support.sap.com/#/softwarecenter/template/products/related/_APP=00200682500000001943&_EVENT=DISPHIER&HEADER=Y&FUNCTIONBAR=N&EVENT=TREE&NE=NAVIGATE&ENR=73554900100900001301&V=MAINT/SAP%20HANA%20PLATFORM%20EDITION%202.0)  
 

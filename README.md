@@ -12,18 +12,22 @@ The approach of this project was to share the same required dev environment by u
 
 #### Setting up this Dev Container - use WSL (Ubuntu)
 
-[Activate additional features Dockerfile](../../../.devcontainer/Dockerfile)
 
 Some features (docker, kubectl, etc.) were outsourced in a separately bash script, to increase the startup time for this devcontainer. If you need one of this features, you only need to comment or uncomment the relevant script.
-Change the permission with the chmod command.
+
+Change the permission to executable with the chmod command.
+
 ```bash
-node ➜ /workspaces/.../.devcontainer (main ✗) $  (docs ✗)
+node ➜ .../.devcontainer (main ✗) $  (docs ✗)
 $ chmod -R +x
 ```
 
+Optional activate additional features at the end of the [Dockerfile](../../../.devcontainer/Dockerfile)
+
 ![Additional features](/docs/config/images/additional-features.png)
 
-[Activate additional VS Code Extensions](../../../.devcontainer/devcontainer.json)
+Optional activate this additional VS Code extensions within
+[devcontainer](../../../.devcontainer/devcontainer.json)
 
 ```json
     "ms-vscode-remote.remote-containers",
