@@ -22,6 +22,8 @@ using-UI5-uploadset-with-CAP
 com.myorg.myUI5App
 myUI5App*
 cpapp*
+dr-cf-build-sap-overview-page/test-cf.txt
+
 # node
 # ====
 https://github.com/github/gitignore/blob/master/Node.gitignore
@@ -144,6 +146,3 @@ dist
 .yarn/install-state.gz
 .pnp.*
 issues
-
-dr-cf-build-sap-overview-page/test-cf.txt
-deploy.txt
