@@ -1,0 +1,47 @@
+#!/usr/bin/env bash
+
+# Checking for existing SSH keys
+# ls -al /usr/local/share/.ssh/
+
+# Generating a new SSH key and adding it to the ssh-agent
+# https://docs.github.com/en/enterprise/2.17/user/github/authenticating-to-github/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent
+# ssh-keygen -t rsa -b 4096 -C "email@googlemail.com"
+# Enter file in which to save the key (/home/node/.ssh/id_rsa): /usr/local/share/.ssh/id_rsa
+
+# 1. After creating the ssh key, fetch and copy the content of the id_rsa.pub file to your github-clipboard
+# $ xclip -sel clip < /usr/local/share/.ssh/id_rsa.pub (if xclip its not working use only cat)
+# $ cat /usr/local/share/.ssh/id_rsa.pub
+
+# 2. And then use this to default your login method to use ssh keys instead of your credentials
+# $ git config --global url.ssh://git@github.com/.insteadOf https://github.com/
+# $ git pull and follow the instructions
+
+# git config values
+# ===================
+#  git config -l
+
+# verbose what key your repo is using
+# ===================
+# ssh -vT git@github.com
+
+# set the path
+# ==============
+# sudo vi /etc/ssh/ssh_config
+# IdentityFile /usr/local/share/.ssh/id_rsa.pub
+
+#  if .ssh directory doesn't exist:
+if [ ! -d /usr/local/share/.ssh/ ]; then
+  cd /usr/local/share && sudo -s mkdir .ssh
+fi \
+  && sudo -s chmod -R 400 ./.ssh/ \
+  && sudo -s chown --recursive "${USERNAME}":"${USERNAME}" ./.ssh/
+
+#  if known_hosts directory doesn't exist:
+if [ ! -d /usr/local/share/.ssh/known_hosts/ ]; then
+  cd /usr/local/share/.ssh && sudo -s mkdir known_hosts/
+fi \
+  && sudo -s chmod -R 700 ./known_hosts/ \
+  && sudo -s chown --recursive "${USERNAME}":"${USERNAME}" ./known_hosts/
+
+sudo -s apt-get update -y \
+  && sudo -s apt-get install xclip -y
