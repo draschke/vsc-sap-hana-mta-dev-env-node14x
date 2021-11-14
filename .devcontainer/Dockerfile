@@ -84,21 +84,21 @@ RUN wget -q -O - https://packages.cloudfoundry.org/debian/cli.cloudfoundry.org.k
 # =========================
 # ADD ADDITIONAL FEATURES
 # =========================
-RUN chmod +x -R scripts \
-    && ./scripts/1-kubectl
-RUN chmod +x -R scripts \
-    && ./scripts/2-kube-devcontainer
-RUN chmod +x -R scripts \
-    && ./scripts/3-minikube
-RUN chmod +x -R scripts \
-    && ./scripts/4-helm
-RUN chmod +x -R scripts \
-    && ./scripts/5-docker
-RUN chmod +x -R scripts \
-    && ./scripts/6-python
+# RUN chmod +x -R scripts \
+#     && ./scripts/1-kubectl
+# RUN chmod +x -R scripts \
+#     && ./scripts/2-kube-devcontainer
+# RUN chmod +x -R scripts \
+#     && ./scripts/3-minikube
+# RUN chmod +x -R scripts \
+#     && ./scripts/4-helm
+# RUN chmod +x -R scripts \
+#     && ./scripts/5-docker
+# RUN chmod +x -R scripts \
+#     && ./scripts/6-python
 
 # ===============================================
 # Install xclip for connecting to GitHub with SSH
 # ===============================================
-RUN chmod +x -R scripts \
-    && ./scripts/xclip-ssh-github    
+# RUN chmod +x -R scripts \
+#     && ./scripts/xclip-ssh-github    
