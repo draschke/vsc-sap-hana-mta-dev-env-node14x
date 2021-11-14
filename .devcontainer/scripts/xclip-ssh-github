@@ -24,12 +24,12 @@
 # Go to your project and follow the instructions
 # $ git pull
 
-# git config values
+# check for git config values
 # ===================
 # git config -l --> list values
 # git config --global --edit --> edit values
 
-# verbose what key your repo is using
+# check what key your repo is using
 # ===================
 #.ssh -vT git@github.com
 
