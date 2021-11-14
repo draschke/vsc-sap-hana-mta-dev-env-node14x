@@ -1,47 +1,74 @@
 #!/usr/bin/env bash
 
-# Checking for existing SSH keys
+# Checking for existing.ssh keys
 # ls -al /usr/local/share/.ssh/
 
-# Generating a new SSH key and adding it to the ssh-agent
-# https://docs.github.com/en/enterprise/2.17/user/github/authenticating-to-github/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent
+# Generating a new.ssh key and adding it to the.ssh-agent
+# https://docs.github.com/en/enterprise/2.17/user/github/authenticating-to-github/generating-a-new.ssh-key-and-adding-it-to-the.ssh-agent
 # ssh-keygen -t rsa -b 4096 -C "email@googlemail.com"
 # Enter file in which to save the key (/home/node/.ssh/id_rsa): /usr/local/share/.ssh/id_rsa
+# Set the permissions
+# sudo -s chmod 400 /usr/local/share/.ssh/id_rsa
 
-# 1. After creating the ssh key, fetch and copy the content of the id_rsa.pub file to your github-clipboard
-# $ xclip -sel clip < /usr/local/share/.ssh/id_rsa.pub (if xclip its not working use only cat)
+# 1. After creating the.ssh key, fetch and copy the content of the id_rsa.pub file to your github-clipboard
+# $ xclip -sel clip < /usr/local/share/.ssh/id_rsa.pub (if xclip its not working use cat ...
 # $ cat /usr/local/share/.ssh/id_rsa.pub
 
-# 2. And then use this to default your login method to use ssh keys instead of your credentials
+# 2. set the path if its not happen already
+# sudo vi /etc/ssh/ssh_config
+# IdentityFile /usr/local/share/.ssh/id_rsa.pub
+# sudo sh -c 'echo "IdentityFile /usr/local/share/.ssh/id_rsa.pub" >> /etc/ssh/ssh_config'
+
+# 3. And then use this to default your login method to use.ssh keys instead of your credentials
 # $ git config --global url.ssh://git@github.com/.insteadOf https://github.com/
-# $ git pull and follow the instructions
+# Go to your project and follow the instructions
+# $ git pull
 
 # git config values
 # ===================
-#  git config -l
+# git config -l --> list values
+# git config --global --edit --> edit values
 
 # verbose what key your repo is using
 # ===================
-# ssh -vT git@github.com
+#.ssh -vT git@github.com
 
-# set the path
-# ==============
-# sudo vi /etc/ssh/ssh_config
-# IdentityFile /usr/local/share/.ssh/id_rsa.pub
-
-#  if .ssh directory doesn't exist:
-if [ ! -d /usr/local/share/.ssh/ ]; then
-  cd /usr/local/share && sudo -s mkdir .ssh
-fi \
-  && sudo -s chmod -R 400 ./.ssh/ \
-  && sudo -s chown --recursive "${USERNAME}":"${USERNAME}" ./.ssh/
-
-#  if known_hosts directory doesn't exist:
-if [ ! -d /usr/local/share/.ssh/known_hosts/ ]; then
-  cd /usr/local/share/.ssh && sudo -s mkdir known_hosts/
-fi \
-  && sudo -s chmod -R 700 ./known_hosts/ \
-  && sudo -s chown --recursive "${USERNAME}":"${USERNAME}" ./known_hosts/
 
 sudo -s apt-get update -y \
-  && sudo -s apt-get install xclip -y
+  && sudo -s apt-get install xclip -y \
+  && if [ ! -d /usr/local/share/.ssh/ ]; then
+    # if directory .ssh does't exits, create .ssh
+    cd /usr/local/share && sudo -s mkdir .ssh \
+      && sudo -s chmod 755 .ssh/ \
+      && sudo -s chown "${USERNAME}":"${USERNAME}" .ssh/
+  else
+    # if directory .ssh does exits
+    # SET THE PERMISSION for .ssh
+    cd /usr/local/share && sudo -s chmod 755 .ssh/ \
+      && sudo -s chown "${USERNAME}":"${USERNAME}" .ssh/
+
+    # if file id_rsa does exits
+    if [ -f /usr/local/share/.ssh/id_rsa ]; then
+      # SET THE PERMISSION FOR id_rsa
+      sudo -s chmod 400 /usr/local/share/.ssh/id_rsa
+      # SET THE PATH FOR ID_RSA.PUB
+      sudo sh -c 'echo "IdentityFile /usr/local/share/.ssh/id_rsa.pub" >> /etc/ssh/ssh_config'
+      echo "id_rsa does not exists."
+    else
+      # SET THE PERMISSION FOR id_rsa
+      sudo -s chmod 400 /usr/local/share/.ssh/id_rsa    
+      echo "id_rsa exists."
+    fi
+  fi
+
+if [ ! -d /usr/local/share/.ssh/known_hosts/ ]; then
+  # if directory known_hosts does't exits, create .ssh
+  cd /usr/local/share/.ssh/ && sudo -s mkdir known_hosts \
+    && sudo -s chmod 755 known_hosts/ \
+    && sudo -s chown "${USERNAME}":"${USERNAME}" known_hosts/
+else
+  # if directory known_hosts does exits
+  # SET THE PERMISSION for .ssh
+  cd /usr/local/share/.ssh/ && sudo -s chmod 755 known_hosts/ \
+    && sudo -s chown "${USERNAME}":"${USERNAME}" known_hosts/
+fi
