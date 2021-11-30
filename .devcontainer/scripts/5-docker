@@ -2,12 +2,26 @@
 
 # ADD ADDITIONAL FEATURES
 # =========================
-# DOCKER
-apt-get -y update \
+# DOCKER for Debian 10 (Buster)
+# https://pkgs.org/download/docker-ce-cli
+# https://download.docker.com/linux/debian/dists/
+
+# Installing docker-compose (comes with python)
+# =====================
+# pip3 install docker-compose
+
+# Installing Compose V2
+# =====================
+# https://docs.docker.com/compose/cli-command/#install-on-linux
+
+# Check docker compose
+# =======================
+# docker --version && docker compose version && docker-compose version
+sudo apt-get -y update \
   && apt-get -y install curl \
   && apt-get -y install apt-transport-https \
   && apt-get -y install ca-certificates \
-  && apt-get -y install gnupg \
+  && apt-get -y install gnupg2 \
   && apt-get -y install lsb-release \
   && apt-get -y install software-properties-common \
   && rm -rf /var/lib/apt/lists/* \
@@ -15,6 +29,9 @@ apt-get -y update \
   && usermod -aG docker "${USERNAME}" \
   && newgrp docker \
   && sudo -u "${USERNAME}" curl -fsSL https://download.docker.com/linux/debian/gpg | apt-key add - \
-  && add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/debian $(lsb_release -cs) stable" \
+  && add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/debian buster stable" \
   && apt-get -y update \
-  && apt-get -y install docker.io
+  && apt-get -y install docker-ce docker-ce-cli containerd.io \
+  && sudo -s mkdir -p /usr/local/lib/docker/cli-plugins/ \
+  && sudo -s curl -SL "https://github.com/docker/compose/releases/download/v2.2.1/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/lib/docker/cli-plugins/docker-compose \
+  && sudo -s chmod +x /usr/local/lib/docker/cli-plugins/docker-compose
