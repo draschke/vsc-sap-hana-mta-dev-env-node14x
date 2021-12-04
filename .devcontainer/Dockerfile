@@ -33,6 +33,8 @@ RUN wget -q -O - https://packages.cloudfoundry.org/debian/cli.cloudfoundry.org.k
     # Keytar - Node module to manage system keychain (VSCode keytar)
     && sudo apt-get update -y \
     && sudo apt-get -y install libsecret-1-dev \
+    && apt-get -y install acl \
+    && apt-get -y install nano \
     # Alter node user as needed, install tslint, typescript. eslint is installed by javascript image
     && if [ "$USER_GID" != "1000" ] || [ "$USER_UID" != "1000" ]; then \
     groupmod --gid $USER_GID $USERNAME \
