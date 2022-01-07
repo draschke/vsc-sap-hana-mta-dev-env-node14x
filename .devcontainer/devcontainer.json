@@ -1,7 +1,7 @@
 // For format details, see https://aka.ms/vscode-remote/devcontainer.json or this file's README at:
 // https://github.com/microsoft/vscode-dev-containers/tree/v0.101.0/containers/typescript-node-12
 {
-  "name": "VS Code Dev Container for SAP HANA App development (XSA and CF) for Node.js 14.x",
+  "name": "SAP-HANA-App-dev-for-Node.js-14.x",
   "dockerFile": "Dockerfile",
   // \\wsl$\Ubuntu-20.04\home\user\.kube
   "mounts": [
@@ -76,7 +76,7 @@
     "rangav.vscode-thunder-client",
     "redhat.vscode-commons",
     "redhat.vscode-yaml",
-    "rogalmic.bash-debug",    
+    "rogalmic.bash-debug",
     "sapos.yeoman-ui",
     "saposs.sap-hana-driver-for-sqltools",
     "saposs.vscode-ui5-language-assistant",

@@ -94,7 +94,8 @@ RUN chmod +x -R scripts \
     && ./scripts/4-helm
 RUN chmod +x -R scripts \
     && ./scripts/5-docker
-RUN chmod +x -R scripts \
+RUN chmod +x -R python \
+    && chmod +x -R scripts \
     && ./scripts/6-python
 
 # ===============================================
