@@ -30,8 +30,7 @@
   },
   // don't shut down the container on exit
   "shutdownAction": "none",
-  "extensions": [
-    "extensions": [
+   "extensions": [
       "alexcvzz.vscode-sqlite",
       "bengreenier.vscode-node-readme",
       "christian-kohler.npm-intellisense",
@@ -130,7 +129,6 @@
       // ==========================================
       "github.copilot"
     ],
-  ],
   // Ensure that Docker socket is mapped into the development container
   "runArgs": [
     "-v",
