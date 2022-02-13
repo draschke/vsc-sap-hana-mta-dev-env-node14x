@@ -27,7 +27,7 @@ COPY ./ ./
 # # # (see https://docs.cloudfoundry.org/cf-cli/install-go-cli.html#pkg-linux).
 RUN wget -q -O - https://packages.cloudfoundry.org/debian/cli.cloudfoundry.org.key | sudo apt-key add - ; \
     echo "deb https://packages.cloudfoundry.org/debian stable main" | sudo tee /etc/apt/sources.list.d/cloudfoundry-cli.list \
-    && sudo apt-get -y update \
+    &&  apt-get -y update \
     # To install cf CLI v6, run
     && sudo apt-get -y install cf-cli \
     # Keytar - Node module to manage system keychain (VSCode keytar)
@@ -35,6 +35,7 @@ RUN wget -q -O - https://packages.cloudfoundry.org/debian/cli.cloudfoundry.org.k
     && sudo apt-get -y install libsecret-1-dev \
     && apt-get -y install acl \
     && apt-get -y install nano \
+    && apt-get -y install dnsutils \
     # Alter node user as needed, install tslint, typescript. eslint is installed by javascript image
     && if [ "$USER_GID" != "1000" ] || [ "$USER_UID" != "1000" ]; then \
     groupmod --gid $USER_GID $USERNAME \
@@ -49,7 +50,8 @@ RUN wget -q -O - https://packages.cloudfoundry.org/debian/cli.cloudfoundry.org.k
     && npm config set registry https://registry.npmjs.org/ \
     # Keytar - Node module to manage system keychain (VSCode keytar)
     && sudo -s npm i keytar \
-    && sudo -u ${USERNAME} npm i @sap/cds-dk \
+    && sudo npm i -g npm@latest \
+    && sudo -u ${USERNAME} npm i -g @sap/cds-dk \
     -g mta \
     -g mbt \
     -g yo \
@@ -68,12 +70,11 @@ RUN wget -q -O - https://packages.cloudfoundry.org/debian/cli.cloudfoundry.org.k
     hana-cli \
     # Install extra tools for CAP development & deployment.
     && apt-get update && export DEBIAN_FRONTEND=noninteractive \
-    && apt-get -y install --no-install-recommends apt-utils dialog 2>&1 \
-    && apt-get -y install sqlite cf-cli \
-    # XS CLI for running against HANA XSA
-    && apt-get update \
-    && apt-get install --yes --no-install-recommends procps unzip \
+    && apt-get -y install --no-install-recommends apt-utils dialog 2>&1 sqlite cf-cli procps unzip \
+    && apt-get clean \    
     && rm -rf /var/lib/apt/lists/* \
+    && wget --progress=dot:giga -O /bin/hadolint https://github.com/hadolint/hadolint/releases/download/v2.8.0/hadolint-Linux-x86_64 \
+    && chmod +x /bin/hadolint \
     && mkdir --parents ${XSCLI} \
     && chown --recursive ${USERNAME}:${USERNAME} ${XSCLI} \
     # List all Cloud Foundry CLI plugins to see whether the installation worked.
